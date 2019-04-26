@@ -1,0 +1,234 @@
+<div class="margin-top">
+    <div class="col-xs-12" id="{{node}}">
+        <div class="panel panel-default app-container">
+            <div class="panel-heading">
+                <h3 class="panel-title ng-binding panel_title_margin">
+                    Refund Checks Report
+                </h3>
+            </div>
+            <hr class="line" />
+            <div class="col-xs-12 filter_checkRefund_margin" *ngIf="!isOverlayBusy && !isOverlayError">
+                <strong class="ng-binding">
+                    <span i18n="site.Displaying">{{ site.Displaying | translate }}</span>&nbsp;
+                    {{  sourceFilter |  translate }}
+                </strong>
+                <ul class="k-widget k-reset k-header k-menu k-menu-horizontal refundCheckFilterUl" tabindex="0">
+                    <li class="k-item k-first k-last ng-scope k-state-default" role="menuitem" aria-haspopup="true"
+                        aria-disabled="false" (mouseover)="sourceMouseOver()">
+                        <span class="k-link k-menu-link" #anchorSourceFilter
+                            (click)="toggleSourceFilter('sourceFilter',true)">
+                            <span class="k-icon k-i-arrow-60-down k-menu-expand-arrow icon_color">
+                            </span>
+                        </span>
+                        <kendo-popup #popupSourceFilter [anchor]="anchorSourceFilter" popupClass="content"
+                            *ngIf="showSourceFilter" class="popbox">
+                            <div class="k-animation-container sourceFilterPopupDiv">
+                                <ul class="k-group k-menu-group k-popup k-reset sourceFilterPopupUl" role="menu"
+                                    data-role="popup" aria-hidden="true">
+                                    <li *ngFor="let dataitem of sourceFilterValue"
+                                        (click)="sourceFilterConsumer(sourceFilterText[dataitem.value],dataitem.value)"
+                                        class="k-item k-first k-state-default" role="menuitem" aria-disabled="false">
+                                        <span class="k-link k-menu-link">
+                                            <span class="ats-menuitem-template ng-binding">
+                                                <i class="fa fa-check"
+                                                    [ngClass]="{invisible:sourceFilterCheck !== dataitem.value}">
+                                                </i>
+                                                {{sourceFilterText[dataitem.value]}}
+                                            </span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </kendo-popup>
+                    </li>
+                </ul>
+                &nbsp;<strong class="ng-binding">
+                    {{daysFilter}}
+                </strong>
+                <ul class="display-inline-flex k-widget k-reset k-header k-menu k-menu-horizontal refundCheckFilterUl">
+                    <li class="k-item k-first k-last ng-scope k-state-default" role="menuitem"
+                        (mouseover)="daysRangeMouseOver()">
+                        <span class="k-link k-menu-link" #anchorDaysFilter
+                            (click)="toggleDaysFilter('daysFilter',true)">
+                            <span class="k-icon k-i-arrow-60-down k-menu-expand-arrow icon_color">
+                            </span>
+                        </span>
+                        <kendo-popup #popupDaysFilter [anchor]="anchorDaysFilter" popupClass="content"
+                            *ngIf="showDaysFilter" class="popbox">
+                            <div class="k-animation-container dateRangeFilterPopupDiv" aria-hidden="true">
+                                <ul class="k-group k-menu-group k-popup k-reset dateRangeFilterPopupUl"
+                                    aria-hidden="true">
+                                    <li *ngFor="let dataitem of daysFilterValue"
+                                        (click)="selectedReportRefundsDateRange(daysFilterText[dataitem.value],dataitem.value)"
+                                        class="k-item k-first k-state-default" role="menuitem" aria-disabled="false">
+                                        <span class="k-link k-menu-link">
+                                            <span class="ats-menuitem-template ng-binding">
+                                                <i class="fa fa-check"
+                                                    [ngClass]="{invisible:daysFilterCheck !== dataitem.value}">
+                                                </i>
+                                                {{daysFilterText[dataitem.value]}}
+                                            </span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </kendo-popup>
+                    </li>
+                </ul>
+                <div class="display-inline" *ngIf="daysFilter=='Date Range'">
+                    <span for="txtFromDate" class="required">{{site.From}}</span>&nbsp;
+                    <div class="display-inline-block datePickerWidth">
+                        <kendo-datepicker [(value)]="fromDateSelectedValue" [format]="'MM/dd/yyyy'"></kendo-datepicker>
+                    </div>
+                    <span for="txtToDate" class="required">{{site.To}}</span>&nbsp;
+                    <div class="display-inline-block ten-padding-right">
+                        <kendo-datepicker [(value)]="toDateSelectedValue" [format]="'MM/dd/yyyy'"></kendo-datepicker>
+                    </div>&nbsp;&nbsp;
+                    <button type="button" (click)="filterReportRefunds()" class="k-button">
+                        <span>{{site.Go}}</span>
+                    </button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-12">
+                    <div class="panel-default app-container">
+                        <app-appoverlay [overlayisBusy]="isOverlayBusy" [overlayisError]="isOverlayError"
+                            *ngIf="isOverlayBusy || isOverlayError"></app-appoverlay>
+                        <kendo-grid [kendoGridBinding]="reportRefundsData" *ngIf="!isOverlayBusy && !isOverlayError"
+                            [resizable]="true" [pageSize]="pageSize" [sortable]="true" [pageable]="true"
+                            [selectable]="true" [scrollable]="'none'" filterable="menu" [kendoGridSelectBy]="'account'"
+                            [rowClass]="rowCallback" [selectedKeys]="refundChecksSelection"
+                            (selectedKeysChange)="onSelectedKeysChange($event)">
+                            <ng-template kendoGridToolbarTemplate>
+                                <div>
+                                    <button class="printButton"
+                                        [ngClass]="{'k-state-disabled':refundCheckCount==0,'cursorPointer':refundCheckCount> 0}">
+                                        <i class="fa fa-print fa-lg faIconPrint"></i>&nbsp;<span
+                                            class="printFontZize">PRINT</span>
+                                    </button>
+                                    <button type="button" class="journalButton" (click)="viewAllJournal()">
+                                        <i class="fa fa-print fa-lg journalIcon"></i>&nbsp;<span
+                                            class="printFontZize">VIEW JOURNAL</span>
+                                    </button>
+
+                                    <i class="fa fa-bars" #anchorReportPDF (click)="toggleReportPDF()"
+                                        aria-hidden="true"
+                                        style="float:right;padding:8px;cursor:pointer;color:white;"></i>
+                                    <kendo-popup #reportPDFpopup [anchor]="anchorReportPDF" popupClass="content"
+                                        *ngIf="showReportPDF" style="top: 262px !important;">
+                                        <ul class="k-widget k-reset k-header k-menu k-menu-vertical ats-gridmenu"
+                                            tabindex="0" role="menubar" style="background:white;">
+                                            <li class="k-item k-state-default" kendoGridPDFCommand
+                                                style="color:black;background:white;">
+                                                <span class="k-link k-menu-link">
+                                                    <span class="k-sprite fa fa-file-pdf-o"></span>Export to PDF
+                                                </span>
+                                            </li>
+                                            <li class="k-item k-state-default" role="menuitem" kendoGridExcelCommand
+                                                style="color:black;background:white;">
+                                                <span class="k-link k-menu-link">
+                                                    <span class="k-sprite fa fa-file-excel-o"></span>Export to Excel
+                                                </span>
+                                            </li>
+                                            <li class="k-item k-state-default k-first"
+                                                style="color:black;padding: 0px 6px;">
+                                                <span class="k-link k-menu-link">
+                                                    <kendo-grid-column-chooser></kendo-grid-column-chooser><span
+                                                        style="font-size:16px;">Columns</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </kendo-popup>
+                                </div>
+                            </ng-template>
+
+                            <kendo-grid-checkbox-column [width]="25">
+                                <ng-template kendoGridHeaderTemplate>
+                                    <input class="k-checkbox" id="refundChecksSelectAllCheckboxId"
+                                        kendoGridSelectAllCheckbox [state]="refundChecksSelectAllState"
+                                        (selectAllChange)="onSelectAllChangeRefundChecks($event)">
+                                    <label class="k-checkbox-label" for="refundChecksSelectAllCheckboxId"></label>
+                                </ng-template>
+                            </kendo-grid-checkbox-column>
+                            <kendo-grid-column field="customerName" title="Customer Name" [width]="100">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="Journal" title="" [filterable]="false" [width]="60">
+                                <ng-template kendoGridCellTemplate let-dataItem>
+                                    <ng-template #template>
+                                        <button type="button" class="tooltipcustomclass" style="background:white;"
+                                            kendoButton (click)="viewJournal(dataItem)">
+                                            <i class="fa fa-fw fa-book fa-lg"></i>
+                                            view Journal
+                                        </button>
+                                    </ng-template>
+                                    <div kendoTooltip position="top" [tooltipTemplate]="template" filter=".tooltop"
+                                        style="padding-top: 10px;">
+                                        <div class="tooltop" style="text-align:center;cursor:pointer;" kendo-tooltip
+                                            k-content="'View Journal'">
+                                            <i class="fa fa-ellipsis-h fa-lg "></i>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </kendo-grid-column>
+                            <kendo-grid-column field="account" title="Account" [width]="100"></kendo-grid-column>
+                            <kendo-grid-column field="source" title="Source" [width]="100"></kendo-grid-column>
+                            <kendo-grid-column field="checkDate" title="Check Date" [width]="120">
+                                <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                                    <span>{{dataItem.checkDate | date:'MMM dd, yyyy'}}</span>
+                                </ng-template>toggle
+                            </kendo-grid-column>
+                            <kendo-grid-column field="checkNo" title="Check #" filter="numeric" [width]="60">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="disconnected" title="Disconnected" [width]="120">
+                                <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                                    <span>{{dataItem.disconnected | date:'MMM dd, yyyy'}}</span>
+                                </ng-template>
+                            </kendo-grid-column>
+                            <kendo-grid-column field="amount" title="Amount" filter="numeric" format="{0:c}"
+                                [width]="80"></kendo-grid-column>
+                            <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+                                <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+                                <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
+                                <kendo-pager-info></kendo-pager-info>
+                                <kendo-pager-next-buttons></kendo-pager-next-buttons>
+                                <kendo-dropdownlist [data]="pageSizes" [textField]="'text'" [valueField]="'value'"
+                                    [valuePrimitive]="true" [(value)]="pageSize" style="width:70px;">
+                                </kendo-dropdownlist><span style="padding-left:10px">items per page</span>
+                            </ng-template>
+                            <div *kendoGridDetailTemplate="let dataItem">
+                                <app-report-refund-details [accountNumber]="dataItem.account"
+                                    [checkNo]="dataItem.checkNo"></app-report-refund-details>
+                            </div>
+                            <kendo-grid-excel fileName="GenerateReportRefunds.xlsx"></kendo-grid-excel>
+                            <kendo-grid-pdf fileName="Products.pdf" [allPages]="true" paperSize="A4"
+                                [repeatHeaders]="true" [landscape]="true">
+                                <kendo-grid-pdf-margin top="2cm" left="1cm" right="1cm" bottom="2cm">
+                                </kendo-grid-pdf-margin>
+                                <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+                                    <div class="page-template">
+                                        <div class="header">
+                                            <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+                                            Multi-page grid with automatic page breaking
+                                        </div>
+                                        <div class="footer">
+                                            Page {{ pageNum }} of {{ totalPages }}
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </kendo-grid-pdf>
+                        </kendo-grid>
+                        <div class="pull-right">
+                            <h5> <span i18n="refundsmanagement.ReportRefundsItemsCount"></span>
+                                {{refundsManagement.ReportRefundsItemsCount}}: 0 <span
+                                    i18n="site.Total"></span>{{site.Total }} : $0.00</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="modalOpened">
+        <!-- <app-journal [journalData]="journalData" (valueChange)='displayJournalModal($event)'></app-journal> -->
+        <jrn-journal [journalData]="journalData" (valueChange)='displayJournalModal($event)'></jrn-journal>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<section *ngIf="customerDetails">
+    <p>{{customerDetails.customerName}}</p>
+    <p>{{customerDetails.customerAddress1}} {{customerDetails.customerAddress2}}</p>
+    <p>{{customerDetails.customerCity }},{{customerDetails.customerState}}{{customerDetails.customerZip}}</p>
+</section>
+<app-appoverlay [overlayisBusy]="isOverlayBusy" [overlayisError]="isOverlayError" *ngIf="isOverlayBusy || isOverlayError"></app-appoverlay>
+
+
+

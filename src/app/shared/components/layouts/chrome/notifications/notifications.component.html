@@ -1,0 +1,29 @@
+
+<div style="position:relative">
+    <button #anchorNotification (click)="toggle()" type="button" class="chrome-button pull-left" style="cursor:pointer"> <span class="fa fa-bell fa-fw"></span></button>
+    <div popupClass="content" *ngIf="show" class="notification-popup">
+        <div class="k-tooltip-content">
+            <div class="panel-tooltip">
+                <div class="panel-tooltip-content">
+                    <h5 class="panel-tooltip-header">{{ chrome.Notifications | translate }}</h5>
+                    <div class="overlay-target">
+                        <div>
+                            <div class="overlay-blockerNotifications">
+                                <div class="overlay-content">
+                                    <div>
+                                        <i class="ng-cloak"></i>
+                                        <i class="fa fa-bell fa-4x"></i>
+                                        <br>
+                                        <span>We'll ring you if one<br>comes up!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-block btn-tooltip" style="margin-top: 17px;">{{chrome.PreviouslyRead}}</button>
+            </div>
+        </div>
+        <div class="k-callout k-callout-n"></div>
+    </div>
+</div>

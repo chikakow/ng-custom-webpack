@@ -1,0 +1,33 @@
+
+<div style="position:relative">
+    <button style="cursor:pointer" #anchor (click)="toggle()" type="button" class="chrome-button">
+        {{ claims.loginName | translate }}
+    </button>
+    <div *ngIf="show" class="employe-popup">
+     <div class="k-tooltip-content ng-scope">
+            <div class="panel-tooltip tooltip-md ng-isolate-scope">
+                <div class="panel-tooltip-content ng-isolate-scope">                                   
+                            <div class="ten-padding">
+                                <div class="pull-left tooltip-col">
+                                    <span class="profile-photo-sm profile-font">BR</span>
+                                </div>
+                                <div class="pull-left">
+                                    <h4 style="margin-top:10px">
+                                        {{ claims.name | translate }}<br>
+                                      
+                                    </h4>                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>  
+                </div>
+                <ul  class="text-align-left k-widget k-reset k-header k-menu k-menu-vertical">
+                    <li class="k-item k-state-default k-first k-state"><span class="k-link k-menu-link" style="color: #444444">{{ site.EmployeeHRPortal | translate }}</span></li>
+                    <li  class="k-item k-state-default k-state"><span class="k-link k-menu-link" style="color: #444444">{{ site.EmployeeSettings | translate }}</span></li>
+                    <li  class="k-item k-state-default k-last k-state"><span class="k-link k-menu-link" style="color: #444444">{{ site.EditLandingPage | translate }}</span></li>
+                </ul>
+                <button type="button" class="btn btn-block btn-tooltip">{{ chrome.Logout | translate }}</button>
+            </div>
+        </div><div class="k-callout k-callout-n"></div>
+    </div>
+
+</div>

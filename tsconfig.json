@@ -1,4 +1,16 @@
 {
+  "include": [
+    "./src/**/*.ts",
+    "./node_modules/fis-reconcile/**/*.ts",
+    "./node_modules/core-foundation/**/*.ts",
+    "./node_modules/mini-portal/**/*.ts",
+    "./node_modules/plgn-journal/**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "./node_modules/",
+    "./node_modules/**/*.spec.ts"
+  ],
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",

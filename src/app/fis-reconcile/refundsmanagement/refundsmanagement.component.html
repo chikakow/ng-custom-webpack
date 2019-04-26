@@ -1,0 +1,23 @@
+<div class="chrome-wrapper">
+    <div>
+        <app-bar></app-bar>
+        <!--<my-journal-directive></my-journal-directive>-->
+        <div id="wrapper" class="toggle" [ngClass]="{'sidebarMarginMin':sidebar === true, 'sidebarMarginMax':sidebar === false}">
+            <div id="page-content-wrapper" class="sidebar-margin">
+                <div class="container-fluid">
+                    <div>
+                        <app-generaterefunds></app-generaterefunds>
+                        <app-reportrefunds ></app-reportrefunds>
+                        <app-potentialrefunds></app-potentialrefunds>
+                        <app-heldrefunds ></app-heldrefunds>
+                        <app-refundchecksreport></app-refundchecksreport>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

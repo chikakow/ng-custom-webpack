@@ -1,0 +1,42 @@
+
+<button #anchor1 (click)="toggle()" type="button" class="chrome-button pull-left" style="cursor:pointer" id="btncompany">
+    <span class="fa fa-building-o fa-fw"></span>
+</button>
+<kendo-popup #popup [anchor]="anchor1" popupClass="content" *ngIf="show" class="popboxCompany">
+    <div class="panel-tooltip-content">
+        <h5 class="panel-tooltip-header">{{ chrome.CompanyAndBranch | translate }}</h5>
+        <div class="ten-padding" *ngIf="!isOverlayBusy && !isOverlayError">
+            <div class="pull-left">
+                <h4 class="seven-bottom-padding">
+                    {{ companyName | translate }}
+                    <br />
+                    <small class="margin-bottom">
+                        {{ branchName | translate }}
+                    </small>
+                </h4>
+            </div>
+            <div class="form-group">
+                <select class="form-control width-one-hundred-percent">
+                    <option *ngFor="let da of companies" value={{da.companyId}} class="ddl-select">
+                        {{ da.companyName  |translate }}
+                    </option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control width-one-hundred-percent ng-pristine ng-valid ng-scope ng-not-empty ng-touched k-valid">
+                    <option *ngFor="let da of branches" value={{da.branchId}} class="ddl-select">
+                        {{ da.branchName | translate }}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group text-align-center ten-top-zero-bottom-margin">
+                <button type="button" class="btn btn-primary">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="k-callout k-callout-n"></div>
+    <app-appoverlay [overlayisBusy]="isOverlayBusy" [overlayisError]="isOverlayError" *ngIf="isOverlayBusy || isOverlayError"></app-appoverlay>
+</kendo-popup>

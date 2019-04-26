@@ -1,0 +1,110 @@
+
+.panel-heading {
+    /*padding: 10px 584px;*/
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-default {
+    border-color: #ddd;
+}
+.reportcolumnMenu {
+    left: 1300px !important;
+    top: 30px !important;
+    width: 212px;
+    height: auto;
+    overflow: visible;
+    display: block;
+    position: absolute;
+    z-index: 10002;
+}
+
+.k-dialog-titlebar {
+    border-color: inherit;
+    color: #fff;
+    background-color: #f9ce1d !important;
+}
+
+
+#page-content-wrapper.sidebar-margin {
+    padding-left: 65px;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.company-banner {
+    background-color: #f9ce1d !important;
+    text-transform: capitalize;
+    color: #212529;
+    font-size: 15px;
+}
+.dialogOpened {   
+    bottom:300px
+}
+.company-banner-text {
+    margin-left: 15px;
+    font-weight: bold !important;
+    vertical-align: initial;
+    text-transform: unset;
+}
+/*.h1 {
+    color: #2f2f2f;
+    font-family: "Roboto-Thin", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}*/
+.k-window-actions 
+{
+    color:black !important;
+
+}
+
+
+.journal {
+    width: 431px;
+    height: auto;
+    position: absolute;
+    right: -178px;
+    background-color: #fff;
+    top: 53px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 10002;
+}
+::ng-deep .k-callout {
+    color: #ffffff !important;
+}
+
+.tooltipcustomclass * {
+    /*font-size: 1.1em;
+    background: transparent;
+    margin: -2px -2px -2px -3px;
+    padding: 1px 1px 1px 1px;*/
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px 10px 0px;
+    background: white;
+    border: none;
+}
+
+.panel-default > .panel-heading {
+    color: #333;
+    border-color: #ddd;
+}

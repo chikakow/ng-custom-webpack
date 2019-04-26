@@ -1,0 +1,115 @@
+<div class="fullmodal">
+    <div class="container">
+        <div class="vertical-center ng-isolate-scope overlay-target" style="position: fixed;" *ngIf="isJournalBusy">
+            <div>
+                <div class="overlay-blocker">
+                    <div class="overlay-content overlay-light">
+                        <div>
+                            <i class="fa fa-circle-o-notch fa-4x fa-spin"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!isJournalBusy && !isJournalError">
+            <div class="fullmodal-banner-container company-banner no-wizard-margin">
+                <div class="width-one-hundred-percent padding-left ng-isolate-scope">
+                    <div class="panel-journal-heading company-banner">
+                        <i class="fa fa-building-o"></i> {{ site.Company | translate }}:reconcile <span
+                            class="company-banner-text ng-binding">
+                            {{ companyName | translate }}
+                        </span>
+                    </div>
+                </div>
+                <button class="fullmodal-button-close btn btn-transparent k-button pull-right margin-right ng-scope">
+                    <i class="fa fa-close fa-3x" (click)="close();"></i>
+                </button>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>
+                            <span
+                                class="modal-title-wrap">{{ refundsManagement.ReportRefundsViewAllJournal | translate }}</span>
+                            {{ actionName | translate}}
+
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <kendo-grid [kendoGridBinding]="viewJouralData" [resizable]="true" [pageSize]="pageSize"
+                            [sortable]="true" [pageable]="true" [selectable]="true" [scrollable]="'none'"
+                            filterable="menu" style="width:100%;left: 85px;" [rowClass]="rowCallback">
+                            <ng-template kendoGridToolbarTemplate>
+                                <div>
+                                    <i class="fa fa-bars" #anchorJournalPDF (click)="toggleJournalPDF()"
+                                        aria-hidden="true"
+                                        style="float:right;padding:8px;cursor:pointer;color:white;"></i>
+                                    <kendo-popup #journalPDFpopup [anchor]="anchorJournalPDF" class="column-Menu"
+                                        popupClass="content" *ngIf="showJournalPDF"
+                                        style="left: 362px !important;top: 262px !important;">
+                                        <ul class="k-widget k-reset k-header k-menu k-menu-vertical ats-gridmenu">
+                                            <li class="k-item k-state-default k-first" kendoGridPDFCommand
+                                                style="color:black;background: white;">
+                                                <span class="k-link k-menu-link">
+                                                    <span class="k-sprite fa fa-file-pdf-o"></span>Export to PDF
+                                                </span>
+                                            </li>
+                                            <li class="k-item k-state-default" role="menuitem" kendoGridExcelCommand
+                                                style="color:black;background: white;">
+                                                <span class="k-link k-menu-link">
+                                                    <span class="k-sprite fa fa-file-excel-o"></span>Export to Excel
+                                                </span>
+                                            </li>
+                                            <li class="k-item k-state-default k-first"
+                                                style="color:black;padding: 0px 16px;">
+                                                <kendo-grid-column-chooser></kendo-grid-column-chooser>Columns
+                                            </li>
+                                        </ul>
+                                    </kendo-popup>
+                                </div>
+                            </ng-template>
+                            <kendo-grid-column field="action" title="Action"></kendo-grid-column>
+                            <kendo-grid-column field="updatedByName" title="Who"></kendo-grid-column>
+                            <kendo-grid-column field="dts" title="When">
+                                <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                                    <span>{{dataItem.dts | date:'MMM dd, yyyy h:mm a'}}</span>
+                                </ng-template>
+                            </kendo-grid-column>
+                            <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+                                <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+                                <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
+                                <kendo-pager-info></kendo-pager-info>
+                                <kendo-pager-next-buttons></kendo-pager-next-buttons>
+                                <kendo-dropdownlist [data]="pageSizes" [textField]="'text'" [valueField]="'value'"
+                                    [valuePrimitive]="true" [(value)]="pageSize" style="width:70px;">
+                                </kendo-dropdownlist><span style="padding-left:10px">items per page</span>
+                            </ng-template>
+
+                            <kendo-grid-excel fileName="Journal.xlsx"></kendo-grid-excel>
+                            <kendo-grid-pdf fileName="Journal.pdf" [allPages]="true" paperSize="A4"
+                                [repeatHeaders]="true" [landscape]="true">
+                                <kendo-grid-pdf-margin top="2cm" left="1cm" right="1cm" bottom="2cm">
+                                </kendo-grid-pdf-margin>
+                                <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+                                    <div class="page-template">
+                                        <div class="header">
+                                            <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+
+                                        </div>
+                                        <div class="footer">
+                                            Page {{ pageNum }} of {{ totalPages }}
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </kendo-grid-pdf>
+                        </kendo-grid>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

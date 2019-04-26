@@ -1,0 +1,42 @@
+
+<div style="position:relative">
+    <button #anchorhistory (click)="toggle()" type="button" class="chrome-button pull-left" style="cursor:pointer"> <span class="fa fa-history fa-fw"></span></button>
+    <div *ngIf="show" class="history-popup">
+        <div class="panel-tooltip-content">
+            <h5 class="panel-tooltip-header">{{ chrome.History | translate }}</h5>
+            <app-appoverlay [overlayisBusy]="isOverlayBusy" [overlayisError]="isOverlayError" *ngIf="isOverlayBusy || isOverlayError"></app-appoverlay>
+            <div *ngIf="!isOverlayBusy && !isOverlayError">
+                <div class="list-group" *ngFor="let groupDate of dates">
+                    <div class="well-sm well no-margin">
+                        <strong>{{groupDate | DateFormatPipe }}</strong>
+                    </div>
+                    <div class="list-group">
+                        <a href="{{da.url}}" *ngFor="let da of history | filterdata: groupDate :'dateOnly'" class="k-state list-group-items no-border" style="text-decoration: none;">
+                            <div class="row">
+                                <div class="col-md-3 zero-padding-right">
+                                    <em><strong class="font">{{da.dts | date:'shortTime'}}</strong></em>&nbsp;
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="app-btn-histroy pull-left {{da.color}}">
+                                        <i class="fa fa-fw {{da.icon}}"></i>
+                                    </div>
+                                    <span class="font">{{appListEnum[da.appId]}} - {{da.description}} </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-block btn-tooltip">{{chrome.ViewAll | translate}}</button>
+        <div class="k-callout k-callout-n"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+
+.ats-note-typed:before { content: '\e800'; } /* '' */
+.ats-note-empty:before { content: '\e801'; } /* '' */
+.ats-note-exists:before { content: '\e802'; } /* '' */
+.ats-flame:before { content: '\e803'; } /* '' */
+.ats-archive:before { content: '\e804'; } /* '' */
+.ats-sad-file:before { content: '\e805'; } /* '' */
+.ats-group:before { content: '\e806'; } /* '' */
+.ats-warning-doc:before { content: '\e807'; } /* '' */
+.ats-node-tree-long:before { content: '\e808'; } /* '' */
+.ats-node-tree:before { content: '\e809'; } /* '' */

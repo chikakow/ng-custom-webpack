@@ -1,0 +1,32 @@
+
+
+
+
+.notification-popup {
+    width: 479px;
+    height: auto;
+    position: absolute;
+    right: -194px;
+    background-color: #fff;
+    top: 53px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 10002;
+}
+
+.overlay-blockerNotifications {
+    position: absolute;
+    z-index: 99;
+    height: 87%;
+    width: 87%;
+    text-align: center;
+    top: 0;
+    left: 16px;
+    padding: opx;
+    box-sizing: border-box !important;
+}
+
+.k-callout-n {
+    border-bottom-color: #ffffff;
+    left: 260px;
+    top: -12px;
+}

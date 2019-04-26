@@ -1,0 +1,4116 @@
+/* _________________________________________________________________________________________________________________
+    SITE.CSS - The site CSS library are global system
+
+    These are common styles that are used across the system, these are custom on top of the
+    bootstrap, kendo, and other class libraries above it. If you are building something that is used globally 
+    in multiple pages.  EXAMPLES: Custom styled controls, global colors, global fonts, Bootstrap, and Kendo
+    Overrides that are global and would be used across the system.  Then this is the place to host it.
+_________________________________________________________________________________________________________________ */
+
+/* ===================================================
+    SYSTEM FONT FACES 
+
+    'grouped' by family name and assigned to bold/italic styles
+   =================================================== */
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('/dist/ClientApp/assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* @font-face entries for the DejaVu Sans webfonts in KendoUI */
+@font-face {
+    font-family: 'DejaVu';
+    src: url('../../fonts/DejaVu/DejaVuSans.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+/* @font-face entries for the Robto webfonts DEFAULT ACROSS SYSTEM */
+
+/*@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../../fonts/roboto/roboto-medium.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}*/
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('../../fonts/roboto/roboto-thin.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/dist/ClientApp/assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+
+
+/* @font-face entries for the Fira Sans webfonts */
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../../fonts/FiraSans/FiraSans-Light.eot");
+    src: url("../../fonts/FiraSans/FiraSans-Light.eot?#iefix") format("eot"), url("../../fonts/FiraSans/FiraSans-Light.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../../fonts/FiraSans/FiraSans-LightItalic.eot");
+    src: url("../../fonts/FiraSans/FiraSans-LightItalic.eot?#iefix") format("eot"), url("../../fonts/FiraSans/FiraSans-LightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("/dist/ClientApp/assets/fonts/FiraSans/FiraSans-Regular.eot");
+    src: url("/dist/ClientApp/assets/fonts/FiraSans/FiraSans-Regular.eot?#iefix") format("eot"), url("/dist/ClientApp/assets/fonts/FiraSans/FiraSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../../fonts/FiraSans/FiraSans-RegularItalic.eot");
+    src: url("../../fonts/FiraSans/FiraSans-RegularItalic.eot?#iefix") format("eot"), url("../../fonts/FiraSans/FiraSans-RegularItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../../fonts/FiraSans/FiraSans-Medium.eot");
+    src: url("../../fonts/FiraSans/FiraSans-Medium.eot?#iefix") format("eot"), url("../../fonts/FiraSans/FiraSans-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../../fonts/FiraSans/FiraSans-MediumItalic.eot");
+    src: url("../../fonts/FiraSans/FiraSans-MediumItalic.eot?#iefix") format("eot"), url("../../fonts/FiraSans/FiraSans-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("/dist/ClientApp/assets/fonts/FiraSans/FiraSans-Bold.eot");
+    src: url("/dist/ClientApp/assets/fonts/FiraSans/FiraSans-Bold.eot?#iefix") format("eot"), url("/dist/ClientApp/assets/fonts/FiraSans/FiraSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../../fonts/FiraSans/FiraSans-BoldItalic.eot");
+    src: url("../../fonts/FiraSans/FiraSans-BoldItalic.eot?#iefix") format("eot"), url("../../fonts/FiraSans/FiraSans-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+/*============= END =============*/
+
+a[disabled=disabled] {
+    cursor: not-allowed;
+}
+
+/* ===================================================
+    TEXT COLORS
+
+    These are standard color choices for overall site.
+   =================================================== */
+
+.text-muted, .disabled /*== disabled class should be found and removed from all code acorss system == */ {
+    color: #777777;
+}
+
+.text-primary {
+    color: #4caf50;
+}
+
+.text-success {
+    color: #4caf50;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.text-info {
+    color: #03a9f4;
+}
+
+.text-warning {
+    color: #f9ce1d;
+    background-color: rgba(48, 48, 48, 0.00);
+}
+
+.text-danger {
+    color: #ff0000;
+}
+
+.text-overlay {
+    color: rgba(153, 153, 153, 1.00);
+}
+
+.text-inverse {
+    color: #ffffff;
+}
+
+.text-nodata, .no-data {
+    color: #808080;
+}
+
+.text-link {
+    color: #003366;
+    text-decoration: underline;
+}
+
+    .text-link:hover, .text-link:focus {
+        color: #336699;
+    }
+
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    BACKGROUND COLORS
+
+    These are standard color choices for overall site.
+   =================================================== */
+
+
+.bg-active,
+.accent-active /*== accent-active class should be found and removed from all code acorss system == */ {
+    background-color: #4caf50 !important;
+}
+
+.bg-inactive,
+.inactive /*== inactive class should be found and removed from all code acorss system == */ {
+    background-color: #d1d1d1 !important;
+}
+
+.bg-primary {
+    background-color: #4caf50 !important;
+}
+
+.bg-success {
+    background-color: #4caf50 !important;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
+.bg-info {
+    background-color: #03a9f4 !important;
+}
+
+.bg-warning {
+    background-color: #f9ce1d !important;
+}
+
+.bg-danger {
+    background-color: #ff0000 !important;
+}
+
+.bg-overlay {
+    color: #d1d1d1 !important;
+}
+
+.bg-panel {
+    background-color: #f9f9f9;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-gray {
+    background-color: #808080;
+}
+/*============= END =============*/
+
+
+/* ===================================================
+     KENDO OVERIDES FOR COLORS
+
+    Forcing to inherit the colors that are in host 
+    container.
+   =================================================== */
+.k-grid td.k-state-selected a,
+.k-grid tr.k-state-selected a,
+.k-listview > .k-state-selected a,
+.k-state-selected .k-progress-status a,
+.k-grid td.k-state-selected a:focus,
+.k-grid tr.k-state-selected a:focus,
+.k-listview > .k-state-selected a:focus,
+.k-state-selected .k-progress-status a:focus,
+.k-grid td.k-state-selected a:hover,
+.k-grid tr.k-state-selected a:hover,
+.k-listview > .k-state-selected a:hover,
+.k-state-selected .k-progress-status a:hover,
+.k-grid td.k-state-selected i.text-success,
+.k-grid tr.k-state-selected i.text-success,
+.k-listview > .k-state-selected i.text-success,
+.k-state-selected .k-progress-status i.text-success,
+.k-grid td.k-state-selected i.text-success,
+.k-grid tr.k-state-selected i.text-success,
+.k-listview > .k-state-selected i.text-success,
+.k-state-selected .k-progress-status i.text-success {
+    color: inherit;
+}
+/*============= END =============*/
+
+
+/* ===================================================
+     KENDO PROGRESS BAR OVERRIDES AND ADDITIONS
+    =================================================== */
+
+.k-progressbar {
+    margin-bottom: 0.25em;
+    width: 100%;
+}
+
+.k-progress-status-wrap {
+    padding-left: 0.5em;
+}
+
+.k-progressbar > .k-state-selected,
+.k-progressbar > .k-state-selected.k-complete {
+    border-radius: 0px;
+}
+
+.progressbar-title {
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+div.ats-top-node-progress-bar {
+    height: 10px;
+    margin: 0px;
+    border-color: lightgrey;
+    border-width: 2px;
+    border-radius: 0px;
+}
+
+    div.ats-top-node-progress-bar > span.k-progress-status-wrap {
+        display: none;
+    }
+
+
+/*============= END =============*/
+
+
+/* ===================================================
+     Remove button
+    =================================================== */
+
+.btn:focus .fa-minus-circle,
+.btn:hover .fa-minus-circle {
+    color: #a94442;
+}
+
+/*============= END =============*/
+
+/* ===================================================
+     GRID EDITOR
+    =================================================== */
+.ats-grideditor-content {
+    border-width: 0px 1px 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    padding: 10px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+/*============= END =============*/
+
+/* ===================================================
+     KENDO SORTABLE
+    
+    See ATS linked list if you are considering developing
+    the kendo sortable
+    =================================================== */
+
+.sort-handle {
+    background-color: transparent;
+    text-align: center;
+    padding: 12px;
+    border-radius: 3px;
+    cursor: move;
+}
+
+    .sort-handle:hover {
+        background-color: #d5d5d5;
+        color: #2a2a2a;
+    }
+
+/*============= END =============*/
+
+/* ===================================================
+    KENDO NOTIFICATION OVERRIDES 
+     
+    We will never use kendos defualt colors and styles 
+    for the notification widget. Turning them of here 
+    fixes a bug where border and some of the background
+    is showing through on our custom templates.
+    =================================================== */
+
+.k-widget.k-notification.k-notification-success,
+.k-widget.k-notification.k-notification-warning,
+.k-widget.k-notification.k-notification-error,
+.k-widget.k-notification.k-notification-info {
+    background-color: none;
+    border: none;
+}
+/*============= END =============*/
+
+
+/* ===================================================
+     ATS LINKED LIST
+
+    We do not currently have a ats-kendo-sortable
+    We use two lists of buttons instead. 
+    See physical count adjustments in inventory
+    =================================================== */
+
+.ats-list {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+}
+
+    .ats-list > button,
+    .ats-list-item {
+        text-align: left;
+        width: 100%;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        padding: 10px;
+        background-color: transparent;
+    }
+
+        .ats-list > button:last-child,
+        .ats-list-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .ats-list > button:hover,
+        .ats-list-item:hover {
+            background-color: lightgray;
+        }
+
+.ats-list-item-highlight,
+button.ats-list-item-highlight {
+    background-color: lightblue;
+}
+
+.ats-list-arrows {
+    height: 400px;
+    text-align: center;
+    display: table;
+}
+
+    .ats-list-arrows > div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+        .ats-list-arrows > div > button {
+            margin-bottom: 50px;
+        }
+
+/*============= END =============*/
+
+/* ===================================================
+     BOOTSTRAP LABEL OVERIDE
+ 
+     This is an overide for the bootstrap label used in 
+     critcal notes/messages. 
+    =================================================== */
+.label-high {
+    border: 2px solid #d9534f;
+    color: #d9534f;
+}
+
+.label-critical {
+    border: 2px solid #d9534f;
+    background-color: #d9534f;
+}
+
+.label-normal {
+    border: 2px solid #999999;
+    color: #999999;
+}
+/*============= END =============*/
+
+
+
+/* ===================================================
+     MARGINS & PADDING HELPERS
+
+     These are standard spacing choices across system. 
+    =================================================== */
+
+.margin-left {
+    margin-left: 15px;
+}
+
+.five-margin-left {
+    margin-left: 5px;
+}
+
+.five-margin-bottom {
+    margin-bottom: 5px;
+}
+
+.margin-right {
+    margin-right: 15px;
+}
+
+.margin-top {
+    margin-top: 15px;
+}
+
+/*.margin-top {
+    margin-top: 15px;
+}*/
+
+.zero-margin-left {
+    margin-left: 0px;
+}
+
+.zero-margin-bottom {
+    margin-bottom: 0px;
+}
+
+.margin-bottom, .navbar-nav {
+    margin-bottom: 15px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.padding-left {
+    padding-left: 15px;
+}
+
+.padding-right {
+    padding-right: 15px;
+}
+
+.padding-top {
+    padding-top: 15px;
+}
+
+.zero-padding-top {
+    padding-top: 0px;
+}
+
+.zero-padding-bottom {
+    padding-bottom: 0px;
+}
+
+.zero-padding-left {
+    padding-left: 0px;
+}
+
+.one-padding-right {
+    padding-right: 1px;
+}
+
+.padding-bottom {
+    padding-bottom: 15px;
+}
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+     CENTERING HELPERS
+    =================================================== */
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+/*============= END =============*/
+
+/* ===================================================
+     TEXT HELPERS
+    =================================================== */
+
+.text-decoration-none{
+    text-decoration: none;
+}
+
+.text-transform-uppercase{
+    text-transform: uppercase;
+}
+
+/*============= END =============*/
+
+/* ===================================================
+     BORDER HELPERS
+    =================================================== */
+
+.transparent-left-border {
+    border-left-color: transparent !important;
+}
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+     HIDE BORDER ON BOOTSTRAP TABLES
+    =================================================== */
+
+.table > tbody > tr > td.no-border,
+.table > tbody > tr > th.no-border,
+.table > tfoot > tr > td.no-border,
+.table > tfoot > tr > th.no-border,
+.table > thead > tr > td.no-border,
+.table > thead > tr > th.no-border {
+    border-color: transparent;
+    border: 0px;
+}
+
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: white;
+}
+
+.table-striped > tbody > tr:nth-child(2n) > td, .table-striped > tbody > tr:nth-child(2n) > th {
+    background-color: lightgrey;
+}
+
+.no-border {
+    border-color: transparent;
+}
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+     HTML OVERIDES
+
+     These are used to overide colors, fonts and layouts for 
+     specific HTML tags that are used across system 
+    =================================================== */
+
+html, body {
+    height: 100%;
+}
+
+a {
+    color: #4caf50;
+}
+
+    a:hover, a:focus {
+        color: #29622c;
+    }
+
+hr {
+    border: 0;
+    border-top: 1px solid #dfdfdf;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body {
+    background: #eeeeee;
+    font-family: 'Roboto','Fira Sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    color: #2f2f2f;
+    font-family: "Roboto-Thin", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: normal;
+    line-height: 1.25;
+    margin-top: 0.65em;
+    margin-bottom: 0.15em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (min-width: 25em) {
+    h1 {
+        font-size: 2.25em;
+        letter-spacing: normal;
+        line-height: 1.11111;
+    }
+}
+
+@media (min-width: 43.75em) {
+    h1 {
+        font-size: 2.5em;
+        letter-spacing: normal;
+        line-height: 1.125;
+    }
+}
+
+@media (min-width: 56.25em) {
+    h1 {
+        font-size: 3em;
+        letter-spacing: normal;
+        line-height: 1.04167;
+    }
+}
+
+@media (min-width: 81.25em) {
+    h1 {
+        font-size: 2.7em;
+        letter-spacing: normal;
+        line-height: 1.0625;
+    }
+}
+
+@media (min-width: 56.25em) {
+    .wf-inactive h1 {
+        font-size: 2.95em;
+        letter-spacing: -0.025em;
+        margin-top: 1.04167em;
+        margin-bottom: 0.47917em;
+    }
+}
+
+h2 {
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-size: 1.625em;
+    letter-spacing: normal;
+    line-height: 1.15385;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (min-width: 25em) {
+    h2 {
+        font-size: 1.75em;
+        letter-spacing: normal;
+        line-height: 1.21429;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 43.75em) {
+    h2 {
+        font-size: 2em;
+        letter-spacing: normal;
+        line-height: 1.25;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 56.25em) {
+    h2 {
+        font-size: 2.25em;
+        letter-spacing: normal;
+        line-height: 1.16667;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 81.25em) {
+    h2 {
+        font-size: 2.22222em;
+        letter-spacing: normal;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+h3 {
+    color: #2f2f2f;
+    font-family: "Roboto", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-weight: 500;
+    font-size: 1.3125em;
+    letter-spacing: normal;
+    line-height: 1.14286;
+    margin-top: 0.95238em;
+    margin-bottom: 0.47619em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (min-width: 25em) {
+    h3 {
+        font-size: 1.5em;
+        letter-spacing: normal;
+        line-height: 1.16667;
+        margin-top: 0.83333em;
+        margin-bottom: 0.41667em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 43.75em) {
+    h3 {
+        font-size: 1.75em;
+        letter-spacing: normal;
+        line-height: 1.14286;
+        margin-top: 0.71429em;
+        margin-bottom: 0.35714em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 56.25em) {
+    h3 {
+        font-size: 1.875em;
+        letter-spacing: normal;
+        line-height: 1.2;
+        margin-top: 0.66667em;
+        margin-bottom: 0.33333em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 81.25em) {
+    h3 {
+        font-size: 1.77778em;
+        letter-spacing: normal;
+        line-height: 1.25;
+        margin-top: 0.625em;
+        margin-bottom: 0.3125em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+h4 {
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-size: 1.125em;
+    letter-spacing: normal;
+    line-height: 1.22222;
+    margin-top: 0.0em;
+    margin-bottom: 0.27778em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (min-width: 25em) {
+    h4 {
+        font-size: 1.125em;
+        letter-spacing: normal;
+        line-height: 1.22222;
+        margin-top: 0.0em;
+        margin-bottom: 0.27778em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 43.75em) {
+    h4 {
+        font-size: 1.25em;
+        letter-spacing: normal;
+        line-height: 1.2;
+        margin-top: 0.0em;
+        margin-bottom: 0.25em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 56.25em) {
+    h4 {
+        font-size: 1.375em;
+        letter-spacing: normal;
+        line-height: 1.18182;
+        margin-top: 0.0em;
+        margin-bottom: 0.22727em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 81.25em) {
+    h4 {
+        font-size: 1.33333em;
+        letter-spacing: normal;
+        line-height: 1.16667;
+        margin-top: 0.0em;
+        margin-bottom: 0.20833em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+h4.center-icon {
+    text-align: center
+}
+
+
+h5 {
+    font-size: 1.0em;
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    margin-top: 0.2em;
+    line-height: 1.16667;
+}
+
+h6 {
+    color: #2f2f2f;
+    font-family: Roboto, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+
+label {
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-size: 1em;
+    line-height: 1.1;
+    letter-spacing: normal;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*============= END =============*/
+
+
+
+
+
+/* ===================================================
+    CURSOR POINTER 
+
+    Kendo UI and bootstrap does not support cursor pointer in some 
+    instances when buttons or list are displayed. These
+    classes ensure that they are all are using pointer
+   =================================================== */
+
+a,
+.k-listview:hover,
+.combo-button-menu ul,
+.k-menu .k-item > .k-link,
+.k-menu .k-item > .k-link > ul.k-group li.k-item,
+.k-menu li.k-item .k-link span.k-icon.k-i-arrow-s,
+.k-grid td.k-state-selected a,
+.k-grid tr.k-state-selected a,
+.k-listview > .k-state-selected a,
+.k-state-selected .k-progress-status a,
+.btn-panel-arrow,
+.btn-panel-arrow-chrome,
+.treeview-cursor.k-treeview span.k-in,
+.btn-drawer-arrow {
+    cursor: pointer;
+}
+
+/*============= END =============*/
+
+/* OVERRIDE - color code: #00b0ff */
+
+.k-grid tr.k-state-selected {
+    background-color: #72cdf7 !important;
+}
+
+/* ===================================================
+    OVERRIDE - KENDO TREE VIEW
+
+    
+    Kendo doesn't wrap text in trees. For the slideout
+   =================================================== */
+
+.treeview-cursor .k-item {
+    white-space: normal;
+}
+
+/*============= END =============*/
+
+/* ===================================================
+    Placeholder text color
+
+   =================================================== */
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge, Chrome */
+    color: rgba(171, 171, 171, 1) !important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(171, 171, 171, 1) !important;
+}
+
+
+/* ===================================================
+    OVERRIDE - KENDO WITH FONTAWESOME ICONS
+
+    All Kendo UI elements used in system have there
+    icons overwritten by Font Awesome, a vector based 
+    font set. note: unicode values for each icon
+    are on the font awesome site. Fontawesome.io
+   =================================================== */
+
+.k-widget.k-tooltip.k-tooltip-validation.k-invalid-msg > span.k-icon.k-warning {
+    font-family: FontAwesome;
+    content: "\f071"; /* fa-exclamation-triangle*/
+    background-image: unset;
+    color: #fff;
+    width: 2px;
+    display: none;
+    visibility: collapse;
+    margin: 0px;
+}
+
+
+/* ==== Grid Detail Template Icons  === */
+
+.k-hierarchy-cell a.k-icon.k-i-collapse,
+.k-hierarchy-cell a.k-icon.k-i-collapse:hover,
+.k-hierarchy-cell a.k-icon.k-i-expand,
+.k-hierarchy-cell a.k-icon.k-i-expand:hover {
+    margin-top: 0px; /* not needed, but added to be consistent with panelbar */
+    overflow: visible; /* not needed, but added to be consistent with panelbar */
+    font-size: 1em;
+    display: inline;
+    text-decoration: none;
+    background-image: none;
+    color: #333;
+}
+
+.k-hierarchy-cell a.k-icon:before {
+    position: relative;
+}
+
+.k-hierarchy-cell a.k-icon.k-i-collapse:before {
+    font-family: FontAwesome;
+    content: "\f077"; /* fa-chevron-up */
+}
+
+.k-hierarchy-cell a.k-icon.k-i-expand:before {
+    font-family: FontAwesome;
+    content: "\f078"; /* fa-chevron-down */
+}
+
+/* ==== END - Grid Detail Template Icons  === */
+
+/* ==== Panel Bar Icons  === */
+.k-panelbar .k-header span.k-icon.k-i-arrow-s,
+.k-panelbar .k-header span.k-icon.k-i-arrow-s:hover,
+.k-panelbar .k-header span.k-icon.k-i-arrow-n,
+.k-panelbar .k-header span.k-icon.k-i-arrow-n:hover {
+    margin-top: 0px;
+    overflow: visible;
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: #333;
+}
+
+    .k-panelbar .k-header span.k-icon.k-i-arrow-s:before {
+        font-family: FontAwesome;
+        content: "\f078"; /* fa-chevron-down */
+    }
+
+    .k-panelbar .k-header span.k-icon.k-i-arrow-n:before {
+        font-family: FontAwesome;
+        content: "\f077"; /* fa-chevron-up */
+    }
+
+/* ==== END Panel Bar Icons  === */
+
+
+/* ====  Grid Filter Icons === */
+/*
+    This is not what we are looking for... this is only for command buttons.
+    http://docs.telerik.com/kendo-ui/controls/data-management/grid/how-to/Layout/font-awesome-icons-in-custom-grid-command-buttons
+    We want to modify the actual grid icons. But we are using basically the same technique...
+    EXCEPT that we have work around the fact that Kendo buries some text in a span nested in the anchor.
+    CSS cannot truly alter/remove text.  So hide the span and add content to the anchor.
+
+    If we ever get an ats-grid.js file (like ats-drop-down-list.js) then we can remove the text
+    and apply the kendo icon to the span (which is less intrusive to the Kendo widget, but requires JS).
+    So it is a toss-up as to which is the better approach (hide element or remove text).
+*/
+
+.k-grid a.k-grid-filter > span.k-icon.k-i-filter {
+    display: none;
+}
+
+.k-grid a.k-grid-filter span.k-icon.k-filter,
+.k-grid a.k-grid-filter:hover span.k-icon.k-filter {
+    display: none;
+}
+
+th.k-filterable a.k-grid-filter.k-state-active {
+    color: #000000;
+    opacity: 1.0;
+    background-color: inherit;
+}
+
+.k-grid a.k-grid-filter,
+.k-grid a.k-grid-filter:hover {
+    overflow: visible;
+    font-size: 1em;
+    text-decoration: none;
+    background-image: none;
+    color: #000000;
+    opacity: 0.2;
+    outline: none;
+}
+
+    .k-grid a.k-grid-filter.k-state-active:hover {
+        opacity: 0.5;
+    }
+
+    .k-grid a.k-grid-filter:hover {
+        opacity: 1.0;
+    }
+
+    .k-grid a.k-grid-filter:before {
+        font-family: FontAwesome;
+        content: "\f0b0"; /* fa-filter */
+    }
+
+/* === END - Grid Filter Icons === */
+
+
+
+/* === Grid Sort Icons  === */
+.k-grid .k-header .k-link span.k-icon.k-i-arrow-s,
+.k-grid .k-header .k-link span.k-icon.k-i-arrow-s:hover,
+.k-grid .k-header .k-link span.k-icon.k-i-arrow-s:focus,
+.k-grid .k-header .k-link span.k-icon.k-i-arrow-n,
+.k-grid .k-header .k-link span.k-icon.k-i-arrow-n:hover,
+.k-grid .k-header .k-link span.k-icon.k-i-arrow-n:focus {
+    overflow: visible;
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: #333;
+    vertical-align: initial;
+    text-decoration: none;
+}
+
+    .k-grid .k-header .k-link span.k-icon.k-i-arrow-s:before {
+        font-family: FontAwesome;
+        content: "\0000a0\f175"; /* &nbsp; fa-long-arrow-down */
+        text-decoration: none;
+    }
+
+    .k-grid .k-header .k-link span.k-icon.k-i-arrow-n:before {
+        font-family: FontAwesome;
+        content: "\0000a0\f176"; /* &nbsp; fa-long-arrow-up */
+        text-decoration: none;
+    }
+/* === END - Grid Sort Icons  === */
+
+
+/* === Grid Filter Row === */
+
+.ats-grid-filter-row .ats-grid-filter-date {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.ats-grid-filter-row .k-button {
+    vertical-align: top;
+}
+
+/* === END -Grid Filter Row  === */
+
+
+/* === Date Picker Icons === */
+/*
+    We have work around the fact that Kendo buries some text in an .k-icon span nested in the .k-select outer span.
+    CSS cannot truly alter/remove text. So hide the span and add font awesome content to the outer span rather
+    than to the original icon span.
+
+    Even if we get an ats-datepicker.js file (like ats-drop-down-list.js) and remove the text via jQuery and
+    and apply the Font Awesome icon to the .k-icon span (which is less intrusive to the Kendo widget, but requires JS),
+    we would still have the problem of kendo framework generated controls (such as the ones that show up in grid
+    filters).  We don't have a hook into the construction of those, so we can't hook them to remove the text.
+
+    So, we have to use this strategy to get them all.
+*/
+.k-datepicker .k-picker-wrap span.k-select span.k-icon.k-i-calendar {
+    display: none;
+}
+
+.k-datepicker .k-picker-wrap span.k-select {
+    margin-top: -0.1em;
+    font-size: 1em;
+    background-image: none;
+    color: #333;
+}
+
+    .k-datepicker .k-picker-wrap span.k-select::before {
+        font-family: FontAwesome;
+        content: "\f073"; /* fa-calendar */
+    }
+/* === END - Date Picker Icons  === */
+
+
+
+/* === Drop Down List Icons  === */
+/* NOTE: This implementation takes the same approach as used for Datepicker.  Please read the notes there. */
+
+.k-dropdown .k-dropdown-wrap span.k-select .k-icon {
+    display: none;
+}
+
+.k-dropdown .k-dropdown-wrap span.k-select {
+    font-size: 1em;
+    background-image: none;
+    color: #333;
+}
+
+    /* collapsed OR expanded up */
+    .k-dropdown .k-dropdown-wrap span.k-select::before,
+    .k-dropdown.k-state-border-up .k-dropdown-wrap span.k-select::before {
+        font-family: FontAwesome;
+        content: "\f0d7"; /* fa-caret-down */
+    }
+
+/* expanded down */
+.k-dropdown.k-state-border-down .k-dropdown-wrap span.k-select::before {
+    font-family: FontAwesome;
+    content: "\f0d8"; /* fa-caret-up */
+}
+
+/* spinner instead of arrow */
+.drop-down-spinner .k-dropdown-wrap span.k-select::before,
+.drop-down-spinner .k-state-border-up .k-dropdown-wrap span.k-select::before {
+    font-family: FontAwesome;
+    content: "\f1ce"; /* fa-circle-o-notch */
+    /*CSS copied from font-awesome.css fa-spin. 
+      fa-spin in animation  is referencing font-awesome's @keyframes fa-spin*/
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+    /* CSS copied from app.css loader */
+    /* SS - Dec 19 2018 - changed from 'top' to to 'bottom' */
+    background: -webkit-linear-gradient(to bottom left, #eeeeee, #767676); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to bottom left, #eeeeee, #767676); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to bottom left,none,none); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom left, #eeeeee, #767676); /* Standard syntax (must be last) */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #808080;
+}
+
+
+/* === END - Drop Down List Icons  === */
+
+/* === kendo-ats-menu  === */
+ul[kendo-ats-menu] > li.k-item > span.k-link > span.k-icon {
+    margin: 0px;
+}
+
+ul[kendo-ats-menu].filter-menu ul.k-group.k-menu-group {
+    max-height: 500px !important; /*kendo is using an inline style for max-height so we have to use !important*/
+}
+
+ul[kendo-ats-menu].filter-menu {
+    display: inline-flex;
+}
+/* END - kendo-ats-menu*/
+
+/* ===  Menu Icons === */
+.k-menu .k-item > .k-link {
+    line-height: 1.34em;
+    padding: 0.895em;
+    margin: 0em;
+}
+
+    .k-menu .k-item > .k-link > ul.k-group li.k-item {
+        line-height: 1.34em;
+        padding: 0.595em;
+        margin: 0em;
+        text-align: left;
+    }
+
+.ats-menu li:after {
+    content: " ";
+    position: unset;
+    left: unset;
+    opacity: 0;
+    margin: unset;
+    margin-left: unset;
+    bottom: unset;
+    border: unset;
+}
+
+.k-menu li.k-item .k-link span.k-icon.k-i-arrow-s {
+    font-size: 1.375em;
+    display: inline;
+    background-image: none;
+    color: inherit;
+    margin: .4em;
+    padding-left: 0em;
+    padding-right: 0em;
+}
+
+    .k-menu li.k-item .k-link span.k-icon.k-i-arrow-s::before {
+        font-family: FontAwesome;
+        content: "\f0d7"; /* fa-caret-down */
+    }
+
+.k-menu li.k-item .k-link span.k-icon.k-i-arrow-e {
+    margin-top: 0px;
+    overflow: visible;
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: #333;
+}
+
+.k-menu li.k-item .k-link span.k-icon.k-i-arrow-e {
+    right: 0.7em;
+}
+
+    .k-menu li.k-item .k-link span.k-icon.k-i-arrow-e::before {
+        font-family: FontAwesome;
+        content: "\f0da"; /* fa-caret-right */
+    }
+
+/*=== END - Menu Icons === */
+
+
+
+/*=== Calendar Nav Icons === */
+
+.k-calendar .k-weekend .k-link {
+    color: red;
+}
+
+.k-calendar .k-header .k-link .k-icon.k-i-arrow-w,
+.k-calendar .k-header .k-link .k-icon.k-i-arrow-e {
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: white;
+}
+
+    .k-calendar .k-header .k-link .k-icon.k-i-arrow-w::before {
+        font-family: FontAwesome;
+        content: "\f0d9"; /* fa-caret-left */
+    }
+
+    .k-calendar .k-header .k-link .k-icon.k-i-arrow-e::before {
+        font-family: FontAwesome;
+        content: "\f0da"; /* fa-caret-right */
+    }
+/*=== END - Calendar Nav Icons === */
+
+
+
+/*=== Grid In-line Edit Command Button Icons === */
+
+.k-grid a.k-grid-edit span.k-icon.k-edit {
+    margin-right: 0.4em;
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: #333;
+}
+
+    .k-grid a.k-grid-edit span.k-icon.k-edit::before {
+        font-family: FontAwesome;
+        content: "\f040"; /* fa-pencil */
+    }
+
+.k-grid a.k-grid-delete span.k-icon.k-delete {
+    margin-right: 0.4em;
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: #333;
+}
+
+    .k-grid a.k-grid-delete span.k-icon.k-delete::before {
+        font-family: FontAwesome;
+        content: "\f00d"; /* fa-times */
+    }
+
+.k-grid a.k-grid-update span.k-icon.k-update {
+    margin-right: 0.4em;
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: #333;
+}
+
+    .k-grid a.k-grid-update span.k-icon.k-update::before {
+        font-family: FontAwesome;
+        content: "\f00c"; /* fa-check */
+    }
+
+.k-grid a.k-grid-cancel span.k-icon.k-cancel {
+    margin-right: 0.4em;
+    font-size: 1em;
+    display: inline;
+    background-image: none;
+    color: #333;
+}
+
+    .k-grid a.k-grid-cancel span.k-icon.k-cancel::before {
+        font-family: FontAwesome;
+        content: "\f05e"; /* fa-ban */
+    }
+/*=== END - Grid In-line Edit Command Button Icons === */
+
+/*============= END =============*/
+
+/* ===================================================
+   "..." GRID ROW TOOLTIP MENU 
+
+    Allows for entire row to be clickable
+    Change mouse to pointer on "..." hover
+   =================================================== */
+
+.ats-tooltip-menu-btn {
+    border: none;
+    background: none;
+}
+
+    .ats-tooltip-menu-btn:hover {
+        background-color: darkgrey;
+    }
+
+.ats-tooltip-menu {
+    text-align: left;
+    margin-right: 15px;
+}
+
+    .ats-tooltip-menu > button {
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px 10px 0px;
+        background: white;
+        border: none;
+    }
+
+        .ats-tooltip-menu > button:hover {
+            background: lightgrey;
+        }
+
+        .ats-tooltip-menu > button > i {
+            margin-left: 15px;
+            margin-right: 5px;
+        }
+
+
+/* ===================================================
+    CONTROL - COMBO BUTTON
+
+    Kendo UI does not support combo button, these styles
+    override kendo to allow for the construction of one.
+   =================================================== */
+
+.combo-button-wrapper {
+}
+
+.combo-button {
+    margin-right: -2px;
+    border-radius: 2px 0 0 2px;
+    margin-right: 0px;
+    padding: .95em;
+    display: block;
+}
+
+.combo-button-menu {
+    border-radius: 0 2px 2px 0;
+    margin-left: 0px;
+    padding: 0px;
+    overflow: visible;
+}
+
+    .combo-button-menu ul {
+        padding: 0px;
+        color: #ffffff;
+        text-align: center;
+        background-color: transparent;
+        margin-top: -1px;
+    }
+
+        .combo-button-menu ul li.k-state-hover {
+            background-color: transparent;
+        }
+
+        .combo-button-menu ul.k-menu .k-state-active {
+            background-color: rgba(255, 255, 255, 0.11);
+            color: #ffffff;
+        }
+
+.k-menu .k-animation-container .k-menu-group {
+    text-transform: none;
+    text-align: left;
+}
+/*============= END =============*/
+
+
+
+
+/*========================================================
+   OVERRIDE - KENDO MENU TO CUSTOM STATUS MENU
+   
+   This is the Status Dropdown Menu aligned to the right
+   in the edit modals currently
+    -Outdoorlight
+    -Vendor
+    -Surge Device
+=========================================================*/
+
+.status-menu {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+}
+
+ul.status-menu.k-widget li.k-item {
+    width: 150px;
+}
+
+ul.status-menu > li > span.k-link span.k-icon {
+    font-size: 1.375em;
+    display: inline;
+    background-image: none;
+    color: inherit;
+    padding-left: 30px;
+}
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    NODE PANEL
+     
+    Overide for Bootstrap Panel class. Used in the app 
+    primarily. But is common across the site and portal
+    as a container around content.
+    =================================================== */
+
+.app-container.panel-default > .panel-heading {
+    background-color: #ffffff;
+}
+
+.app-container.panel-default > .panel-margin {
+    margin-left: 14px;
+    margin-right: 14px;
+    padding-left: 1px;
+}
+
+/*toolbar buttons*/
+.btn-panel-arrow {
+    position: relative;
+    margin: -6px -15px -10px 15px;
+    float: right;
+    z-index: 10;
+    display: block;
+    font-size: 12px;
+    color: #767676;
+    background-color: transparent;
+    border-left: 1px solid #e1e1e8;
+}
+
+    .btn-panel-arrow > button {
+        color: #767676;
+        background-color: transparent;
+    }
+
+    .btn-panel-arrow > .btn-link:hover {
+        color: #767676;
+    }
+
+
+.btn-panel-arrow-chrome {
+    position: relative;
+    float: right;
+    z-index: 10;
+    display: block;
+    padding: 5px 8px;
+    font-size: 12px;
+    color: #767676;
+    background-color: transparent;
+    border-left: 1px solid #e1e1e8;
+}
+
+    .btn-panel-arrow-chrome > .btn-link {
+        color: #767676;
+    }
+
+        .btn-panel-arrow-chrome > .btn-link:hover {
+            color: #188c2b;
+        }
+
+/* Usually .btn-panel-arrow contains a .btn which forces a certain size/configuration.
+   .btn-panel-arrow-text mimics that size/configuration for text without making it a .btn
+*/
+
+.btn-panel-arrow-text {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4285;
+    white-space: nowrap;
+    cursor: default;
+    border: 1px solid transparent;
+}
+
+/* Spacer used above first node of app. */
+.spacer {
+    margin-top: 1em;
+}
+
+/* left align icons and bodys of text in divs */
+.float-icon-left {
+    float: left;
+    padding-right: 5px;
+}
+
+.float-left {
+    float: left;
+}
+
+.panel-title {
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-size: 1.125em;
+    line-height: 1.1;
+    letter-spacing: normal;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (min-width: 25em) {
+    .panel-title {
+        font-size: 1.125em;
+        letter-spacing: normal;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 43.75em) {
+    .panel-title {
+        font-size: 1.25em;
+        letter-spacing: normal;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 56.25em) {
+    .panel-title {
+        font-size: 1.375em;
+        letter-spacing: normal;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 81.25em) {
+    .panel-title {
+        font-size: 1.33333em;
+        letter-spacing: normal;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/*============= END =============*/
+
+/* ===================================================
+    OVERIDE - KENDO TABSTRIP
+    =================================================== */
+
+/* bootstrap rows used inside of tabstrips cause horizontal scrollbar to appear because
+   bootstrap rows use -15px right/left padding.  This suppresses the horizontal scrollbar.
+*/
+.k-tabstrip > .k-content, .k-panelbar .k-tabstrip > .k-content {
+    overflow: hidden;
+}
+
+/* ===================================================
+    OVERIDE - KENDO TABSTRIP - SIMPLE 
+     
+    Overides put in place to make a custom simple
+    tabstrip used in edit modal forms.
+    =================================================== */
+.kendo-tab-simple {
+    background-color: transparent;
+}
+
+.k-tabstrip:focus {
+    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0.2),0 0px 0px rgba(0,0,0,0.05);
+    box-shadow: 0 0px 0px rgba(0,0,0,0.2),0 0px 0px rgba(0,0,0,0.05);
+}
+
+.kendo-tab-simple > .k-tabstrip-items .k-state-default .k-link {
+    color: #3f51b5;
+    padding: 0.35em 1.5em;
+    border-radius: 0em;
+    margin-bottom: .65em;
+    border-left: solid 2px #d1d1d1;
+    text-transform: capitalize;
+}
+
+.kendo-tab-simple > .k-tabstrip-items .k-state-active .k-link {
+    color: #000;
+}
+
+.kendo-tab-simple > .k-tabstrip-items > li.k-first > span.k-link {
+    border-left: solid 0px;
+    text-transform: unset;
+    text-transform: capitalize;
+}
+
+.kendo-tab-simple > .k-tabstrip-items .k-state-active {
+    background-color: transparent;
+    background-image: url('../../images/tab-selector.png');
+    background-repeat: no-repeat;
+    background-position-y: 1.65em;
+    border-color: transparent;
+    font-weight: bold;
+}
+
+.kendo-tab-simple > .k-tabstrip-items .k-item {
+    background-color: transparent;
+}
+
+.kendo-tab-simple > .k-tabstrip-items {
+    background-image: url('../../images/horizonital-rule.png');
+    background-repeat: repeat-x;
+    background-position-y: 35px;
+}
+
+    .kendo-tab-simple > .k-tabstrip-items .k-item .k-state-hover {
+        background: transparent;
+        border-color: transparent;
+        color: inherit;
+        border-top: 0px solid transparent;
+    }
+
+    .kendo-tab-simple > .k-tabstrip-items .k-item .k-loading {
+        border-top: 0px solid transparent;
+    }
+
+/*This section is for buttons inside tabstrips for modals.
+    If we use buttons instead of li then we can use our normal focus/activate functionality*/
+.tab-strip-button {
+    color: #3f51b5;
+    line-height: 1.14em;
+    padding: 0px;
+    vertical-align: top;
+    outline: none;
+    background: transparent;
+}
+
+    .tab-strip-button:hover {
+        text-decoration: none;
+        color: #3f51b5;
+    }
+
+.k-state-active .tab-strip-button:hover {
+    color: #000;
+}
+
+.k-tabstrip .k-state-active .tab-strip-button {
+    color: #000;
+    font-weight: bold;
+}
+
+.tab-strip-button:active,
+.tab-strip-button:focus,
+.tab-strip-button:active:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/*============= END =============*/
+
+
+
+.list-inline > li {
+    display: inline-block;
+    padding-right: 0.938em;
+    padding-left: 0.313em;
+    padding-top: 0.938em;
+}
+
+
+
+/* ===================================================
+    BOOTSTRAP TABLE SCROLL
+    Use when you wish to set a bootstrap table 
+    to specified height and have data scroll.
+    wrap table in div
+    =================================================== */
+.table-scroll-sm {
+    overflow: auto;
+    height: 300px;
+}
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    BOOTSTRAP TOGGLE BUTTON
+    Use this when you wish to set a toggle button for 
+    true false or to switch ui elements.
+    =================================================== */
+.toggle-group {
+    /*height: 2.69em;   Removed by Tim for addaccount-modal togglebuttons... removal has no ill affects elsewhere? */
+    width: auto;
+}
+
+    .toggle-group > button {
+        background-color: lightgray; /* works for white icons and text */
+        color: #909090 !important; /* override bootstrap .btn:hover so that we don't get a color change when disabled */
+        border: solid 1px #e6e6e6;
+        border-radius: 2px;
+    }
+
+        .toggle-group > button:hover:enabled {
+            background-color: darkgray; /* works for white icons and text */
+            color: #000000 !important; /* override bootstrap .btn:hover so that we don't get a color change when disabled */
+            border: solid 1px #bbbbbb;
+        }
+
+        .toggle-group > button:focus {
+            border: solid 1px #3343a4;
+        }
+
+        .toggle-group button.toggle-selected,
+        .toggle-group > button.toggle-selected:hover:enabled {
+            background-color: #3343a4;
+            color: #ffffff !important; /* override bootstrap .btn:hover so that we don't get a color change when disabled */
+            border: solid 1px #515da3;
+        }
+
+
+/*============= END =============*/
+
+/* ===================================================
+    KENDO MOBILE SWITCH LABEL ALIGN
+     
+    Used to veritcally align content with a mobile switch
+    Example: add/edit purchase cards
+    =================================================== */
+.ats-km-content-align {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/*============= END =============*/
+
+/* ===================================================
+    OVERIDES - KENDO MOBILE SWITCH
+     
+    Used in the app wherever switch controls are used.
+    Example: Add/Edit Vendor Worklow
+    =================================================== */
+
+
+.km-checkbox, .km-switch {
+    font-size: 1.5em;
+    width: 7rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 1.5em;
+    background-color: #fafafa;
+    margin: 0 -3px;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,.4),0 0 2px 1px #ffffff;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,.4),0 0 2px 1px #ffffff;
+}
+
+    .km-switch:focus {
+        border-radius: 1.5em;
+        background-color: #efefef;
+    }
+
+.km-switch-handle {
+    width: 1.17em;
+    height: 1.15em;
+    border-radius: 1em;
+    border: .10em solid rgba(0, 0, 0, 0.1);
+    background-color: #3f51b5;
+    -webkit-box-shadow: 0 3px 8px rgba(0,0,0,.4),0 0 0px 0px #ffffff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.4),0 0 0px 1px #ffffff;
+    margin: 2px;
+}
+
+.km-switch-label-off {
+    left: 135%;
+}
+
+.km-switch-label-on {
+    left: -165%;
+}
+
+.km-switch-label-off, .km-switch-label-on {
+    font-size: .7em;
+    line-height: 1.50em;
+    text-shadow: 0 0px 0 rgba(0,0,0,.3);
+}
+
+.k-header .km-switch-container { /* Styling for text inside of switches. not positive why this is been added, please remove and check switches. */
+    color: #444;
+}
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+   ANGUILAR NG-CLOAK
+
+   It helps reduce angluar flashing by defining a duplicate css def
+   that gets loaded immediately.
+   =================================================== */
+.ng-cloak {
+    display: none !important;
+}
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    OVERIDE - KENDO BUTTON MAKE IT TRANSPARENT
+
+    Classes for making kendo button transparent. 
+    Idea is to mimic link, but it is ultamatelly a button
+    so contains all the goodness an Anchor does not.
+    =================================================== */
+.btn-transparent {
+    background: transparent;
+    margin: 0px;
+    color: #4caf50;
+    text-transform: capitalize;
+}
+
+    .btn-transparent.k-button,
+    .btn-transparent.k-button:hover,
+    .btn-transparent.k-button.k-state-hover,
+    .btn-transparent.k-button.k-state-focused,
+    .btn-transparent.k-button:focus,
+    .btn-transparent.k-button:focus:not(.k-state-disabled):not([disabled]) {
+        -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0.2),0 0px 0px rgba(0,0,0,0.05);
+        box-shadow: 0 0px 0px rgba(0,0,0,0.2),0 0px 0px rgba(0,0,0,0.05);
+        background: transparent;
+        border: none;
+    }
+
+
+        .btn-transparent.k-button:hover:not([disabled]),
+        .btn-transparent.k-button.k-state-hover:not([disabled]) {
+            color: #29622c;
+            background: transparent;
+            border: none;
+            text-transform: capitalize;
+            text-decoration: underline;
+        }
+
+        .btn-transparent.k-button.text-decoration-none:hover:not([disabled]),
+        .btn-transparent.k-button.text-decoration-none.k-state-hover:not([disabled]) {
+            text-decoration: none;
+        }
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    OVERLAY TARGET
+
+    Overlays are used in the system when content is 
+    loading or fails to load and amessage to the user
+    should be displayed.
+    =================================================== */
+
+
+.overlay-target {
+    position: relative !important;
+    min-height: 200px; /*don't let it collapse too small, could hide loading icon, etc.*/
+    box-sizing: border-box !important;
+}
+
+.overlay-blocker {
+    position: absolute;
+    z-index: 99; /*this is being changed from 999 to 99 to coordinate with kendo menu drop down for grids*/
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 15px; /*this leaves nice white margin around the bordered well need becasue it is position absolute*/
+    box-sizing: border-box !important;
+}
+
+    .overlay-blocker.suppress-horizontal-padding {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .overlay-blocker.suppress-padding {
+        padding: 0px;
+    }
+
+
+
+.overlay-content { /* gray well used on defult overlays eq:nodes */
+    height: 100%;
+    margin-bottom: 0px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    color: #808080;
+}
+
+    .overlay-content.overlay-light { /* no gray well, this should be used on light background eq:slideouts */
+        background-color: transparent;
+        border: none;
+        -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0);
+        box-shadow: inset 0 0px 0px rgba(0,0,0,0);
+    }
+
+    .overlay-content.overlay-dark { /* no gray well, this should be used on dark background eq:drawers */
+        background-color: transparent;
+        border: none;
+        color: #ffffff;
+        -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0);
+        box-shadow: inset 0 0px 0px rgba(0,0,0,0);
+    }
+
+
+    .overlay-content div,
+    .overlay-content-light div,
+    .overlay-content-dark div {
+        position: relative;
+        top: 48%; /* better for the "eye"*/
+        transform: translateY(-48%);
+    }
+
+.vertical-center { /* needed to make light version center inside content region on modals and other areas.*/
+    height: 100%;
+}
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    OVERRIDES - KENDO GRID 
+    =================================================== */
+
+/*	Kendo Grid overides for scrollbars. These may need 
+    to be Double checked for use.
+*/
+
+.k-scrollbar-hidden > .k-grid-content {
+    overflow-y: auto;
+}
+
+.k-scrollbar-hidden > .k-grid-header {
+    padding-right: 0 !important;
+}
+
+.k-scrollbar-hidden .k-grid-content-expander {
+    position: unset;
+    height: 0px;
+}
+
+.k-scrollbar-hidden > .k-grid-footer {
+    padding-right: 0 !important;
+}
+
+.k-grid td {
+    padding-top: 0.6em;
+    Padding-bottom: 0.6em;
+}
+
+.k-grid-header .k-header-column-menu {
+    padding: 0em 0.6em;
+}
+
+.toolbar-label {
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.14em;
+    font: inherit;
+}
+
+
+/*   All detail levels in a Kendo Grid potentially can 
+    showup in a different color, text is most readable
+    on white so we have established an override that will
+    force the background on a grid detail to be white, 
+    for that reason. 
+     */
+
+.k-grid .k-detail-cell {
+    background-color: #ffffff;
+}
+
+/*  kendo.material.css specifically says to show hover colors on disabled buttons.
+    and responds to clicks (mouse-down).
+    This is annoying to users because it makes buttons look like they are still active.
+    We disable that here, but it may not work for other themes.
+*/
+
+.k-grid .k-grid-toolbar.k-header .toolbar .k-button.k-state-disabled:hover {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.k-grid .k-grid-toolbar.k-header .toolbar .k-button.k-state-disabled:active {
+    color: white; /*#fafafa  either works because opacity is also set? */
+}
+
+
+/* virtual scrolling relies on predictable row height... so no wrapping..*/
+.ats-virtual-grid.k-grid td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*hide grid filters for inline editing*/
+.ats-hide-grid-filters .k-grid-filter {
+    display: none;
+}
+
+/* For inline editing, kendo uses a different element
+   Since we can/need to use our normal span element, we are hiding it. 
+   opacity: 0;        Chrome, FF
+   vsibility: hidden; IE
+*/
+div.k-widget.k-tooltip.k-tooltip-validation.k-invalid-msg {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* turn off kendo max-width for bad styling for inline editing*/
+.k-edit-cell .k-tooltip, html .k-grid-edit-row .k-tooltip {
+    max-width: none;
+}
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+    LOGIN AND SELECT COMPANY
+     
+    When user signs in these are the first windows
+    that will appear.
+    =================================================== */
+
+.login-background {
+    background-image: url('../../images/Power-lines-at-sunset.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    Position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.login-content-container {
+    position: relative;
+    width: 400px;
+    margin: 60px auto 0;
+    padding-top: 60px;
+    background-color: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 7px 1px rgba(60, 60, 60, 0.3);
+    box-shadow: 1px 1px 7px 1px rgba(60, 60, 60, 0.3);
+}
+
+.login-content {
+    margin: 0 15%;
+    padding: 0 0 70px;
+}
+
+.login-content-logo {
+    height: 75px;
+    width: 225px;
+}
+
+.login-form-control {
+    display: block;
+    width: 100%;
+}
+
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    MESSAGE MODAL 
+     
+    Used in the app to display simple messages/alerts 
+    (Critical, Warning, and Informational Types ) 
+    =================================================== */
+.msgmodal {
+    text-align: center;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 10003;
+}
+
+@media (max-width: 768px) {
+    .msgmodal {
+        top: 13%;
+        left: 5%;
+        right: 5%;
+    }
+}
+
+@media (min-width: 768px) {
+    .msgmodal {
+        top: 20%;
+        left: 10%;
+        right: 10%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .msgmodal {
+        top: 20%;
+        left: 20%;
+        right: 20%;
+    }
+}
+
+.msgmodal > div.k-window-content {
+    position: static;
+    /*height: 350px;*/
+    background: transparent;
+}
+
+.msgmodal-content-container > p {
+    line-height: 1.5em;
+    margin: 15px 0 40px 0;
+}
+
+
+.msgmodal-icon-header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 25px 0px;
+    border: 2px solid #ffffff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.msgmodal-content-container {
+    margin-top: 120px;
+    padding: 0 50px;
+    padding-bottom: 25px;
+}
+
+/*.messagebox.error .k-window-titlebar,*/
+.msgmodal-icon-header.error {
+    background-color: #ff0000;
+}
+
+/*.messagebox.warning .k-window-titlebar,*/
+.msgmodal-icon-header.warning {
+    background-color: #f9ce1d;
+}
+
+/*.messagebox.info .k-window-titlebar,*/
+.msgmodal-icon-header.info {
+    background-color: dodgerblue;
+}
+
+/* Critical Notes in message box modal (Critical Notes and Atributes that are found in Buletin Bar, these classes support that message modal that appears.)*/
+.panel-scroll {
+    overflow-y: auto;
+    min-height: 150px;
+    max-height: 270px;
+}
+
+.validation-error-list {
+    overflow-y: auto;
+    min-height: 100px;
+}
+
+@media (max-height: 768px) {
+    .validation-error-list {
+        max-height: 220px;
+    }
+}
+
+@media (min-height: 768px) {
+    .validation-error-list {
+        max-height: 320px;
+    }
+}
+
+@media (min-height: 900px) {
+    .validation-error-list {
+        max-height: 400px;
+    }
+}
+
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    MODAL FULL SCREEN
+     
+    Used when editing or adding form data is needed, 
+    can be used for informational purposes, but is 
+    primarilly used to add, Edit, or complete workflows.
+    =================================================== */
+.fullmodal .container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 0px 50px 50px 50px;
+    margin-bottom: 25px;
+}
+
+.fullmodal {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(62, 62, 62, 0.50);
+    left: 0;
+    right: 0px;
+    bottom: 0;
+    top: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/*!important is needed below because
+    other button classes overwrite our colors
+    and the modal close button is of highest priority
+*/
+.fullmodal-button-close {
+    color: #2f2f2f !important;
+    padding: 0px;
+    z-index: 99999; /*Coordinated with fullmodal*/
+    margin-right: 15px;
+}
+
+    .fullmodal-button-close:hover {
+        color: #000000 !important;
+        text-decoration: none !important;
+    }
+
+.fullmodal .yes-wizard-margin {
+    padding-top: 0px !important;
+}
+
+.fullmodal .no-wizard-margin {
+    padding-top: 0px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.fullmodal-banner-container {
+    display: flex;
+    align-items: center;
+    margin-left: -50px;
+    margin-right: -50px;
+}
+
+.fullmodal-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.error-div {
+    padding-right: 40px;
+}
+
+@media (min-width: 801px) {
+    .fullmodal .small-wide-modal {
+        width: 50%;
+    }
+}
+
+@media (max-width: 801px) {
+    .fullmodal .small-wide-modal {
+        width: 55%;
+    }
+}
+
+@media (min-width: 801px) {
+    .fullmodal .medium-wide-modal {
+        width: 70%;
+    }
+}
+
+@media (max-width: 801px) {
+    .fullmodal .medium-wide-modal {
+        width: 75%;
+    }
+}
+
+
+@media (min-width: 801px) {
+    .fullmodal .extra-wide-modal {
+        width: 90%;
+    }
+}
+
+@media (max-width: 800px) {
+    .fullmodal .extra-wide-modal {
+        width: 95%;
+    }
+}
+
+.ats-content {
+    border-radius: 10px;
+}
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+    MODAL DRAWER
+     
+    Used primarily in conjunction with modal windows. 
+    Provides infomations or additional area for forms. 
+    Modal Drawer can also exist in pages as another way 
+    of editing preferences or settings when a full 
+    drawer is not needed.
+    =================================================== */
+.drawer-wrapper {
+    width: 300px;
+    height: 100%;
+    min-height: 300px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0;
+    z-index: 10001;
+}
+
+.drawer {
+}
+
+.drawer-header {
+    width: 288px;
+    background-color: #fff;
+    padding: 12px 5px 12px 19px;
+    z-index: 1000;
+}
+
+.drawer-title {
+    color: #2f2f2f;
+    margin: 0;
+    float: left;
+    padding-top: 2px;
+    text-transform: uppercase;
+}
+
+.drawer-body {
+    padding: 15px 0;
+}
+
+.btn-drawer-arrow {
+    padding: 5px 0 5px 15px;
+    color: #333;
+    float: right;
+    display: block;
+    background-color: transparent;
+    border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+    .btn-drawer-arrow:hover {
+        color: #111;
+    }
+/*============= END =============*/
+
+
+
+
+
+/* ===================================================
+    PLACE HOLDER PROFILE PHOTO
+     
+    Used for users conference on all photos of beverly,
+    need to configure this so users can add edit or
+    remove.
+    =================================================== */
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 100px;
+    border: 4px solid #4caf50;
+    background-size: cover;
+}
+
+.profile-photo-sm {
+    width: 80px;
+    height: 80px;
+    margin: 2px auto;
+    border-radius: 80px;
+    border: 4px solid #4caf50;
+    background-size: cover;
+}
+
+/*============= END =============*/
+
+
+/* ===================================================    
+    OVERLAPPING TOOLTIP         
+    =================================================== */
+
+.overlapping-tooltip {
+    position: relative;
+    overflow: visible;
+}
+
+    .overlapping-tooltip > .overlapping-tooltip-container {
+        display: none;
+        text-align: left;
+        text-transform: initial;
+        font-size: 14px;
+        color: #333;
+        position: absolute;
+        width: 250px;
+        left: 80%;
+        top: 80%;
+        background: #fff;
+        z-index: 2;
+        border: 1px solid #ddd;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+
+        .overlapping-tooltip > .overlapping-tooltip-container.active {
+            display: initial;
+        }
+
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    OVERIDES - INPUTS / FORM CONTROLS
+     
+    Used in the app wherever form controls are used.
+    =================================================== */
+.k-state-disabled:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.input-block {
+    width: 100%;
+}
+
+span.input-lg {
+    height: unset;
+}
+
+.btn-lg {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 115%;
+    line-height: 1.3333333;
+}
+
+
+.k-dropdown .k-state-default, .k-editor-toolbar .k-dropdown-wrap.k-state-default, .k-toolbar .k-dropdown-wrap.k-state-default, .k-numeric-wrap.k-state-default {
+    border-color: inherit;
+}
+
+.numeric-input .k-input {
+    text-align: right;
+    padding-right: 15px;
+}
+
+
+
+/* k-state-disabled prevents bootstrap's [disabled].form-control
+   cursor: not-allowed from working due to k-state-disabled's "important" flag.
+   So we override kendo here to sync it up with bootstrap.
+*/
+.k-state-disabled.form-control {
+    cursor: not-allowed !important;
+}
+
+.disabled-div {
+    opacity: 0.2;
+}
+
+​
+/* 
+
+     Remove the clear button [X] added by IE in text inputs.
+     The [X] clears the text, but does not properly raise text change events,
+     meaning that the change it causes is not detected (at least by angular).  
+     Trying to program around this on every text field could be problematic
+     and we would have to create our own text field to work around it centrally.
+     The simplest solution is simply to squash it.
+
+     This solution (and others) is discussed here...
+     http://stackoverflow.com/questions/14007655/remove-ie10s-clear-field-x-button-on-certain-inputs
+
+     For some reason I have to apply BOTH to get it to go away?
+     Not sure why.  But after 10 tests I am convinced.  Someone else should try.
+ */
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+::-ms-clear {
+    display: none;
+}
+
+/*============= END =============*/
+
+
+/* ===================================================
+    ATS FILE UPLOAD WIDGET
+
+    Used in our custom file upload widget
+   =================================================== */
+
+/*colors are matched with fullmodal-close button*/
+.ats-file-remove-btn {
+    color: #2f2f2f !important;
+    padding: 0px;
+}
+
+    .ats-file-remove-btn:hover {
+        color: #000000 !important;
+    }
+
+/*============= END =============*/
+
+/* ===================================================
+    TEXT AREA
+   =================================================== */
+
+textarea.k-textbox {
+    overflow: auto;
+}
+
+/*============= END =============*/
+
+/* ===================================================
+    KENDO VALIDATION OVERIDES
+     
+    Used in the app wherever form fields display validation used.
+    =================================================== */
+
+/* REQUIRED STAR FOR LABEL */
+.required:before {
+    content: "*";
+}
+
+.required::before {
+    content: "*";
+}
+
+/* REQUIRED FIELD   */
+input.ng-untouched.ng-invalid.ng-invalid-required,
+textarea.ng-invalid.ng-invalid-required.ng-untouched.ng-empty.k-textbox,
+span.ng-invalid.ng-invalid-required.ng-untouched.k-dropdown span.k-dropdown-wrap.k-state-default,
+span.ng-untouched.ng-empty.ng-invalid.ng-invalid-required,
+span.ng-untouched.ng-invalid.ng-invalid-required .k-numeric-wrap input,
+span.k-datepicker.ng-untouched.ng-empty.ng-invalid-required > span,
+div.ats-ng-untouched {
+    border-color: #ffd800;
+    background-color: #fffad8;
+}
+
+
+/* VALIDATION ERROR */
+.k-invalid,
+.k-invalid.k-picker-wrap,
+.k-invalid.k-numerictextbox,
+.k-invalid span.k-picker-wrap,
+.k-invalid.k-autocomplete,
+.k-invalid.k-multiselect,
+.k-invalid.k-multiselect.k-state-hover {
+    border-color: red !important;
+}
+
+
+.k-widget.k-tooltip.k-tooltip-validation.k-invalid-msg {
+    color: #ffffff;
+    display: block;
+    font-size: 80%;
+    z-index: 13000;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.0);
+    border-color: #ff0000;
+    background-color: #ff0000;
+    padding: 3px;
+    text-align: left;
+    border-radius: 0px 0px 2px 2px;
+    margin-top: -2px;
+}
+
+span.k-widget.k-tooltip.k-tooltip-validation.k-invalid-msg > span.k-icon.k-i-warning {
+    display: none;
+}
+
+.ng-valid.k-textbox,
+.ng-valid.k-dropdown,
+.ng-valid.k-dropdown-wrap,
+.ng-valid.k-textarea,
+span.ng-valid.k-autocomplete.k-state-default,
+span.ng-valid span.k-dropdown-wrap.k-state-default,
+span.ng-valid span.k-numeric-wrap.k-state-default,
+span.ng-valid span.k-picker-wrap.k-state-default {
+    border-color: #C3C3C3;
+}
+
+/*============= END =============*/
+
+/* ===================================================
+    WIZ BANG FORM WIZARD 
+     
+    Used in the in modal windows when multiple steps
+    required to complete form. Recommend if more than
+    three steps.
+    =================================================== */
+.wizard-tab .container .row {
+}
+
+.wizard-tab {
+}
+
+a {
+    outline: 0;
+}
+
+.board {
+    margin-left: -50px;
+    margin-right: -50px;
+}
+
+    .board .nav-tabs {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
+
+    .board > div.board-inner {
+        background: #fafafa;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+p.narrow {
+    width: 60%;
+    margin: 10px auto;
+}
+
+.liner {
+    height: 2px;
+    background: #ddd;
+    position: absolute;
+    width: 60%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+
+.two-steps .liner {
+    width: 50%;
+}
+
+.three-steps .liner {
+    width: 70%;
+}
+
+.four-steps .liner {
+    width: 80%;
+}
+
+.five-steps .liner {
+    width: 85%;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+    outline: 0;
+}
+
+span.round-tabs {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: white;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+}
+
+    span.round-tabs.disabled {
+        color: #ddd;
+        border: 2px solid #ddd;
+        line-height: 1.33em;
+        background-color: #fafafa;
+    }
+
+span.round-tabs {
+    color: #4caf50;
+    border: 2px solid #4caf50;
+    line-height: 1.33em;
+}
+
+    span.round-tabs > i {
+        padding-top: 10px;
+    }
+
+li.active span.round-tabs {
+    background: #fff !important;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+}
+
+li.complete span.round-tabs {
+    background: #fff !important;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+}
+
+.nav-tabs > li.active > a span.round-tabs {
+    background: #fafafa;
+    outline: 0;
+}
+
+.two-steps > li {
+    width: 50%;
+}
+
+.three-steps > li {
+    width: 33%;
+}
+
+.four-steps > li {
+    width: 25%;
+}
+
+.five-steps > li {
+    width: 20%;
+}
+
+.nav-tabs > li:after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    margin: 0 auto;
+    margin-left: -0.75em;
+    bottom: 0px;
+    border: 0.75em solid transparent;
+    border-bottom-color: #ddd;
+    transition: 0.1s ease-in-out;
+}
+
+.nav-tabs > li.active:after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    opacity: 1;
+    margin: 0 auto;
+    margin-left: -0.75em;
+    bottom: 0px;
+    border: 0.75em solid transparent;
+    border-bottom-color: #ddd;
+    outline: 0;
+}
+
+.nav-tabs > li a {
+    width: 25%;
+    text-align: center;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0px 0px;
+    outline: 0;
+}
+
+    .nav-tabs > li a:hover {
+        background: transparent;
+        outline: 0;
+    }
+
+@media( min-width : 585px ) {
+
+    .nav-tabs > li a {
+        width: 70px;
+        height: 70px;
+        line-height: 50px;
+    }
+
+    li.active:after {
+        content: " ";
+        position: absolute;
+        left: 50%;
+        margin-left: -0.75em;
+    }
+
+    .btn-outline-rounded {
+        padding: 12px 20px;
+    }
+}
+/*============= END =============*/
+
+
+
+
+/* The below styles all used to be inline*/
+.accountnode-template {
+    min-height: 160px;
+}
+
+.service-order-instructions {
+    border: none;
+    min-height: 160px;
+}
+
+.service-order-instructions-textarea {
+    width: 100%;
+    height: 150px;
+    border: none;
+    resize: none;
+}
+
+
+
+
+
+
+
+/* Override Kendo Style for grid exports, globally  */
+/* don't export toolbar to PDF/Excel... we will always do our own manually.  so suppress it here. */
+.k-pdf-export .k-grid-toolbar,
+.k-pdf-export .k-grouping-header {
+    display: none;
+}
+
+/* Avoid collision between Font Awesome and Kendo  */
+/* if a font-awesome icon is specified, suppress any kendo icon */
+.fa.k-sprite {
+    background-image: none;
+}
+
+/* Override Kendo style for toolbars, globally! */
+/* Nathan, should we be doing this?  This was originally for Project Management only. */
+.k-toolbar-resizable {
+    overflow: visible;
+    white-space: nowrap;
+}
+
+/*Overrides form MDI window*/
+.mdi .k-window-titlebar {
+    background-color: #3f51b5;
+}
+
+div.mdi {
+    border-radius: 0;
+}
+
+.mdi .k-button {
+    text-transform: none;
+}
+
+.mdi .k-window-titlebar .k-window-action {
+    background-color: #3f51b5;
+}
+
+/* use this on grid columns to correct filters not working when data has multiple spaces */
+.white-space-pre {
+    white-space: pre;
+}
+
+
+/* Kendo vs Bootstrap */
+button.k-state-disabled,
+.k-state-disabled [role=button] {
+    cursor: default;
+}
+
+
+/* Grid headers */
+.k-grid thead.k-grid-header th.k-header {
+    white-space: normal;
+}
+
+
+
+
+/* gridmenu */
+.ats-gridmenu li {
+    /* Because we are manually adding items to the menu,
+       the animation container doesn't seem to be sizing
+       things correctly?  So we have to hard-code it manually?
+    */
+    min-width: 210px;
+}
+
+.ats-gridmenu .k-header-column-menu {
+    color: white;
+}
+
+
+/*
+ //TODO:Nathan, please verify this approach to suppress a double border on grids inside a panel body.   
+ */
+
+
+.panel-body-containing-grid {
+    padding: 0px;
+}
+
+    .panel-body-containing-grid .k-grid {
+        border: none;
+    }
+
+.panel-squared-bottom .k-grid .k-footer-template td {
+    border-bottom-width: 0px;
+}
+
+.panel-squared-bottom {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.k-grid .k-grid-footer {
+    border-bottom-width: 0px;
+}
+
+k-detail-row td.k-detail-cell {
+    background-color: #FFFFFF;
+}
+
+.k-grid .k-detail-cell:hover {
+    background-color: #FFFFFF;
+}
+
+.widget-icon {
+    background-color: #ffffff;
+    border: #d1d1d1 solid 1px;
+    color: #d1d1d1;
+    float: left;
+    text-align: center;
+    line-height: 90px;
+    width: 90px;
+    height: 90px;
+}
+
+.ats-menuitem-template {
+    white-space: nowrap;
+}
+
+.grid-action {
+    padding: 0px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+/*.ats-menuitem-template i {
+        margin-right: 10px;
+    }*/
+
+/*
+    //TODO:NATHAN, the following 2 classes are currently used in relatedaccounts slideout, 
+    to give the color indicator to the left.  So the containing li (which 
+    //offset-children is applied to) is set to the conditional color.  
+
+*/
+.offset-children .k-header {
+    margin-left: 5px;
+}
+
+.offset-children .k-group {
+    margin-left: 5px;
+}
+
+.float-left-slideout {
+    float: right;
+    margin-right: 20px;
+    font-size: 10pt;
+    background-color: red;
+    min-width: 5px;
+    padding: 3px 5px;
+}
+
+
+
+.ats-overflow-menu {
+    line-height: inherit;
+    border-color: transparent;
+    background-image: none;
+    background-color: transparent;
+    color: #000;
+}
+
+
+ul.ats-overflow-menu li span.k-state-active,
+ul.ats-overflow-menu li.k-state-hover {
+    background-color: rgba(255, 222, 72, 0.72);
+    border: solid 1px rgba(255, 222, 72, 0.90);
+    color: #000;
+}
+
+
+ul.k-menu-group li.k-state-hover {
+    background-color: #e6e6e6;
+}
+
+/**
+    added to give some color as hover when item in focus
+*/
+li.k-state-focused {
+    background-color: #e6e6e6;
+}
+
+.k-widget .col-lg-1, .k-widget .col-lg-2, .k-widget .col-lg-3,
+.k-widget .col-lg-4, .k-widget .col-lg-5, .k-widget .col-lg-6,
+.k-widget .col-lg-7, .k-widget .col-lg-8, .k-widget .col-lg-9,
+.k-widget .col-lg-10, .k-widget .col-lg-11, .k-widget .col-lg-12,
+.k-widget .col-md-1, .k-widget .col-md-2, .k-widget .col-md-3,
+.k-widget .col-md-4, .k-widget .col-md-5, .k-widget .col-md-6,
+.k-widget .col-md-7, .k-widget .col-md-8, .k-widget .col-md-9,
+.k-widget .col-md-10, .k-widget .col-md-11, .k-widget .col-md-12,
+.k-widget .col-sm-1, .k-widget .col-sm-2, .k-widget .col-sm-3,
+.k-widget .col-sm-4, .k-widget .col-sm-5, .k-widget .col-sm-6,
+.k-widget .col-sm-7, .k-widget .col-sm-8, .k-widget .col-sm-9,
+.k-widget .col-sm-10, .k-widget .col-sm-11, .k-widget .col-sm-12,
+.k-widget .col-xs-1, .k-widget .col-xs-2, .k-widget .col-xs-3,
+.k-widget .col-xs-4, .k-widget .col-xs-5, .k-widget .col-xs-6,
+.k-widget .col-xs-7, .k-widget .col-xs-8, .k-widget .col-xs-9,
+.k-widget .col-xs-10, .k-widget .col-xs-11, .k-widget .col-xs-12 {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+
+.k-widget select,
+.k-widget textarea,
+.k-widget input[type="text"]:not(.k-input),
+.k-widget input[type="password"],
+.k-widget input[type="datetime"],
+.k-widget input[type="datetime-local"],
+.k-widget input[type="date"],
+.k-widget input[type="month"],
+.k-widget input[type="time"],
+.k-widget input[type="week"],
+.k-widget input[type="number"],
+.k-widget input[type="email"],
+.k-widget input[type="url"],
+.k-widget input[type="search"],
+.k-widget input[type="tel"],
+.k-widget input[type="color"],
+.k-widget .uneditable-input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.k-window .row, .k-window .row :not(.k-widget):not(.k-animation-container), .k-widget .row :not(.k-widget):before {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.row-flex, .row-flex > div[class*='col-'] {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.row-flex-wrap {
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    flex: 0;
+}
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+    margin: -.2px; /* hack adjust for wrapping */
+}
+
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+    flex-flow: column nowrap;
+}
+
+.flex-grow {
+    display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+/*============================================================================
+    The following are used for the type ahead search boxes.
+  ============================================================================
+*/
+.ats-search-box > .btn-transparent.k-button.fa-search {
+    right: -5px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    color: #000000;
+    text-decoration: none;
+}
+
+.ats-search-box > .button-hover:hover {
+    background-color: #e6e6e6 !important;
+}
+/* Add the selector class if you have a dropdown that you want on
+    the left of the search box. ex: Portal page.
+*/
+.ats-search-box.selector {
+    height: 50px;
+    padding: 0 50px;
+}
+
+.ats-search-box {
+    height: 50px;
+    padding: 0 50px 0 0;
+}
+
+    .ats-search-box > .k-widget,
+    .ats-search-box > .k-input,
+    .ats-search-box > .k-widget > input,
+    .ats-search-box > .k-input > input {
+        border-radius: 0px;
+        box-shadow: none;
+        border-style: none;
+        width: 100%;
+        height: 43px;
+    }
+
+    .ats-search-box > span.k-widget > span.k-icon {
+        margin: 0px 5px 0px 0px;
+    }
+
+    .ats-search-box > ul li.k-item .k-link span.k-icon.k-i-arrow-s {
+        font-size: unset;
+        display: unset;
+        background-image: unset;
+        color: unset;
+        margin: unset;
+        padding-left: unset;
+        padding-right: unset;
+        position: inherit;
+        margin-left: 5px;
+    }
+
+    .ats-search-box > ul .k-item > .k-link {
+        line-height: 1.33em;
+        padding: 1.1em;
+        margin: 0em;
+    }
+
+    .ats-search-box > ul {
+        left: 0px;
+        top: 0px;
+        position: absolute;
+    }
+
+
+/*============================================================================
+    Vertically align switches and icons that are inside a div
+  ============================================================================
+*/
+.align-switch-icon i,
+.align-switch-icon .km-switch-container {
+    vertical-align: top;
+}
+
+.align-switch-icon > i.fa.fa-check-circle-o,
+.align-switch-icon > i.fa.fa-times-circle-o {
+    vertical-align: top;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.align-switch-icon > i.fa.fa-circle-o-notch {
+    vertical-align: top;
+}
+
+
+/*================================================================================
+    Fail pages and templates (not found, error, unauthorized)
+  ================================================================================*/
+
+.fail-background {
+    background-image: url('../../images/failplug.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    Position: absolute;
+    left: 5%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.fail-content-container {
+    position: relative;
+    width: 450px;
+    margin: 60px auto 0;
+    padding-top: 60px;
+    background-color: #F7F9FA;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 7px 1px rgba(60, 60, 60, 0.3);
+    box-shadow: 1px 1px 7px 1px rgba(60, 60, 60, 0.3);
+    left: 10%;
+}
+
+.fail-content {
+    margin: 0 15%;
+    padding: 0 0 50px;
+    word-wrap: break-word;
+}
+
+.fail-content-logo {
+    height: 75px;
+    width: 225px;
+}
+
+/*============= END =============*/
+
+/* ==================================================++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=======================================
+    STYLES TO CONSIDER TRASHING as of JULY 31, 2016
+
+    Based on a clean sweep these styles do not make sense to remain. 
+    Because they either are old and outdated, or they do not support 
+    the standards sought in code.
+    =================================================== */
+
+
+
+
+/* It appears that these were inline styles in areas of the system from the very begining, 
+    these more than likey are not used anymore, but as Tech Debt Nathan advises someone to 
+    check each class across the entires solution and remove them one by one. by now devs
+    should be using bootstrap columns and rows properly so these will not be needed.*/
+
+k .thin-border-right {
+    border-right: thin solid #ddd;
+}
+
+.ten-padding {
+    padding: 10px;
+}
+
+.one-point-five-em-vertical-margin {
+    margin: 1.5em 0;
+}
+
+.one-fifty-min-height {
+    min-height: 150px;
+}
+
+.font-size-small {
+    font-size: small;
+}
+
+.one-sixty-min-height {
+    min-height: 160px;
+}
+
+.zero-margin {
+    margin: 0px 0px 0px 0px;
+}
+
+.five-right-margin {
+    margin-right: 5px;
+}
+
+.five-bottom-margin {
+    margin: 0px 0px 5px 0px;
+}
+
+.twenty-four-right-margin {
+    margin-right: 24px;
+}
+
+.five-top-margin {
+    margin-top: 5px;
+}
+
+.twentyfive-margin {
+    margin: 25px;
+}
+
+.five-margin {
+    margin: 5px;
+}
+
+.fifteen-margin-top {
+    margin-top: 15px;
+}
+
+.fifteen-margin-bottom {
+    margin-bottom: 15px;
+}
+
+.fifteen-margin-left {
+    margin-left: 15px;
+}
+
+.one-hundred-margin-left {
+    margin-left: 100px;
+}
+
+.thirty-five-margin-top {
+    margin-top: 35px;
+}
+
+.twenty-five-margin-top {
+    margin-top: 25px;
+}
+
+.two-hundred-margin-left {
+    margin-left: 200px;
+}
+
+.ten-top-zero-bottom-margin {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.ten-padding-left {
+    padding-left: 10px;
+}
+
+.ten-padding-right {
+    padding-right: 10px;
+}
+
+.seven-bottom-padding {
+    padding-bottom: 7px;
+}
+
+.twenty-padding-right {
+    padding-right: 20px;
+}
+
+.thirty-padding-right {
+    padding-right: 30px;
+}
+
+.twenty-padding-top {
+    padding-top: 20px;
+}
+
+.zero-margin-top {
+    margin-top: 0;
+}
+
+.sticky-header-data {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.up-down-div {
+    margin: -36px -18px 0px 0px;
+    background-color: transparent;
+    border-left: solid 1px #999999;
+}
+
+.solid-grey-border-top {
+    border-top: solid 1px #999999;
+}
+
+.panel-footer-clear {
+    background: none;
+    border: none;
+}
+
+.projectmanagement-filter-right {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.panel-tooltip-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.border-bottom-black {
+    border-bottom: 2px solid black;
+}
+
+.tooltip-info-msg {
+    background-color: #e5e5e5;
+    padding: 10px;
+}
+
+.remove-disabled {
+    opacity: 0.2 !important;
+}
+
+
+.priority-switch {
+    background-color: transparent;
+    right: 0px;
+}
+
+.priority-switch-font {
+    font-weight: 600;
+}
+
+.fill-container {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.timestamp-icon {
+    padding: 2px 5px 2px 0px;
+}
+
+.abbreviated-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bolder-font-weight-grey {
+    font-weight: bolder;
+    color: grey;
+}
+
+.width-four-hundred {
+    width: 400px;
+}
+
+.width-four-twentyfive {
+    width: 425px;
+}
+
+.width-two-fifty {
+    width: 250px;
+}
+
+.width-seven-fifty {
+    width: 750px;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.width-three-forty {
+    width: 340px;
+}
+
+.width-two-hundred {
+    width: 200px;
+}
+
+.width-ninty-five-percent {
+    width: 95%;
+}
+
+.width-one-hundred-percent {
+    width: 100%;
+}
+
+.width-seventy-percent {
+    width: 70%;
+}
+
+.width-sixty-percent {
+    width: 60%;
+}
+
+.width-fifty-five-percent {
+    width: 55%;
+}
+
+.width-one-seventy-five {
+    width: 175px;
+}
+
+.width-one-sixty {
+    width: 160px;
+}
+
+.width-three-hundred {
+    width: 300px;
+}
+
+.width-twenty-percent {
+    width: 20%;
+}
+
+.width-thirty-percent {
+    width: 30%;
+}
+
+.width-forty-percent {
+    width: 40%;
+}
+
+.width-eighty-six-percent {
+    width: 86%;
+}
+
+.width-sixty-four {
+    width: 64px;
+}
+
+.width-one-fifty {
+    width: 150px;
+}
+
+.height-one-fifty {
+    height: 150px;
+}
+
+.zero-padding {
+    padding: 0px 0px 0px 0px;
+}
+
+.one-em-line-height {
+    line-height: 1em;
+}
+
+.height-department-name {
+    height: 40px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.display-inline-flex {
+    display: inline-flex;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-block {
+    display: block;
+}
+
+.zero-padding-right {
+    padding-right: 0px;
+}
+
+.ats-invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/*.servicelocation-node-boundry {
+    min-height: 375px;
+}*/
+
+.location-height {
+    height: 373px;
+}
+
+
+
+.three-twenty-five-min-height {
+    min-height: 325px;
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+
+
+.map-height {
+    height: 300px;
+}
+
+.margin-100 {
+    margin: 0 0 100px 0;
+}
+
+/* ===================================================
+   DRAWER OVERLAY
+   =================================================== */
+.drawer-overlay {
+    background-color: rgba(255, 255, 255, 0.65);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0;
+    z-index: 10000;
+}
+
+.fullmodal-drawer-visible {
+    right: 300px;
+    left: -100px;
+}
+
+
+/* ===================================================
+   Modal Buttons
+   =================================================== */
+.modal-btn-group {
+    margin-top: 15px;
+}
+
+
+
+
+/*========================================================
+    I cannot find this classes use in the entire solution
+    Nathan, belives it is obsolete, please chaeck and then remove
+    this"Validation group style"
+=========================================================*/
+.validation-group {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: #cf463c;
+    border-style: solid;
+    background-color: #ffeceb;
+    background-size: auto;
+    background-repeat: repeat;
+    background-position: center center;
+    color: #cf463c;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+
+/* 
+    Override Bootstrap's override of Kendo checkboxes in a menu (ats-gridmenu)
+    so that the text has some separation from checkbox. 
+
+    So is this global overide is it being used right now. 
+    Check and then place under proper note above if it is needed.
+*/
+ul.k-menu-group li.k-item span.k-link input[type=checkbox] {
+    margin-right: 4px;
+}
+
+/*  USE FONT AWESOME. Remove this override all 
+    exclamations now have 10px, and more than 
+    likely has caused other overides to be put
+    in place to compensate for the 10px on the top. 
+    Really bad practice.*/
+.fa-exclamation {
+    padding-top: 10px;
+}
+
+/*ATS Additions*/
+.fa-ats-calendarclock {
+    position: relative;
+}
+
+    .fa-ats-calendarclock:before {
+        content: "\f133";
+        top: 0px;
+        left: 0px;
+    }
+
+    .fa-ats-calendarclock:after {
+        content: "\f017";
+        font-size: .6em;
+        position: absolute;
+        top: 10px;
+        left: 30%;
+    }
+
+
+/* Nathan is not sure how or why these were added. 
+    They need to be checked to see if they are important and
+     then properlly noted or removed */
+
+.no-data-grid { /*we have a no-data class*/
+    border-radius: 0px;
+    min-height: 125px;
+}
+
+.bordered-panel-heading {
+    padding: 15px;
+    border: solid 1px #f6f6f6;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+}
+
+.bordered-panel-body {
+    padding: 15px;
+    border: solid 1px #dedede;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.pull-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-center {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.big-icon {
+    font-size: 16em;
+}
+
+/* === These styles should be found and removed. 
+    Please use the following boundaries-drawer-template, as an example.  ===*/
+.drawer-main {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0;
+    z-index: 99999;
+}
+
+.drawer-content {
+    padding-left: 8.33%;
+    padding-right: 8.33%;
+}
+
+.disable-hover-events {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.kendogrid-cell-rightaligned {
+    text-align: right;
+}
+
+/* === This style is for kendo multiselect ===*/
+.k-multiselect.k-header {
+    border-color: #C3C3C3 !important;
+}
+
+.col-flex {
+    display: flex;
+}
+
+.col-content-bottom {
+    align-items: flex-end;
+}
+
+/* When using multi select for grid col filter, we need chips to display the delete button properly. 
+   This width property will allow us to display the delete button on the chip correctly.
+   We are targeting the specific li buttons generated when multi select is used as grid col filter.
+*/
+.k-filter-menu .k-multiselect-wrap .k-button {
+    width: auto !important;
+}
+
+/* This is set for multi select control when used as grid col filter. 
+   If we do not specify some kind of max width the selected chips keep flowing horizontally.
+*/
+.k-filter-menu .k-multiselect {
+    max-width: 184px;
+}
+
+.k-grid-header th.header-checkbox-center {
+    text-align: center;
+    padding-left: 1.26em;
+    padding-right: 1.26em;
+}
+
+/* This is for new Address formate */
+
+.bold {
+    font-weight: bold;
+}
+
+.address-with-icon {
+    align-items: baseline;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+    .address-with-icon .map-icon {
+        margin-right: 5px;
+    }
+
+.contact-primary {
+    align-items: flex-start;
+    display: flex;
+}
+
+.contact-primary-label {
+    align-items: baseline;
+    background-color: #f9ce1d;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    width: 125px;
+}
+
+.contact-primary-label-icon {
+    margin-right: 10px;
+}
+/* === Remove above ===*/
+
+/* Make sure this is last - helps correct for an orientation scale bug in iOS
+@media screen and (orientation: landscape) and (device-width: 320px) and (device-height: 480px) {
+    body {
+        width: 480px;
+    }
+}
+/mediaquery*/
+
+
+
+/*
+    This is Brian's attempt at styling out the split button
+*/
+
+/*
+                ul.split-button {
+                    padding: 0px !important;
+                }
+
+                    ul.split-button li.k-state-hover,
+                    ul.split-button li.k-state-hover span.k-link {
+                        color: #fff;
+                    }
+
+                    ul.split-button.k-menu .k-item > .k-link {
+                        padding: 0px;
+                    }
+
+                    ul.split-button li.k-first {
+                        border-bottom-right-radius: 0px;
+                        border-top-right-radius: 0px;
+                    }
+
+                    ul.split-button li.k-last {
+                        z-index: auto !important;
+                        border-left-color: #fff !important;
+                        border-left-style: solid !important;
+                        border-left-width: 1px !important;
+                        border-bottom-left-radius: 0px;
+                        border-top-left-radius: 0px;
+                    }
+
+                        ul.split-button li.k-last span.k-link span.k-i-arrow-s {
+                            margin-left: 0px;
+                            margin-right: 0px;
+                            color: #fff !important;
+                        }
+
+                    ul.split-button li.k-state-border-down span.k-state-border-down {
+                        background-color: #5c6bc0;
+                    }
+
+                    ul.split-button li.k-last div.k-animation-container {
+                        margin-left: 0px !important;
+                        padding-left: 0px !important;
+                        padding-right: 0px !important;
+                    }
+
+                        ul.split-button li.k-last div.k-animation-container .k-menu-group {
+                            margin-left: 0px !important;
+                        }
+
+                        ul.split-button li.k-last div.k-animation-container > ul.k-button > li.k-item {
+                            padding: 4px 5px;
+                            text-align: left;
+                        }
+*/
+
+
+/*.ats-menu-button .k-item > .k-link {
+    padding: 0px;
+}
+
+    .ats-menu-button .k-item > .k-link span.k-i-arrow-s {
+        display: none !important;
+    }
+
+    .ats-menu-button .k-item > .k-link i {
+        background-color: transparent;
+    }*/
+
+
+
+
+/*
+
+    //TODO: The purpose of the following styles is to give us a sctructure for a button with a menu beside it so they appear as one control
+    */
+
+/*.ats-button-with-overflow {
+    -moz-border-radius-topright: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    border-bottom-right-radius: 0px;
+    float: left;
+    padding-right: 15px;
+    padding-left: 14px;
+    border-right-color: #dbdbdb;
+    border-right-width: 1px;
+    box-shadow: none;
+}
+ 
+.ats-overflow-menu,
+.ats-overflow-menu.k-menu,
+.ats-overflow-menu k-state-hover,
+.ats-overflow-menu:hover .ats-overflow-menu.k-primary.k-state-active:hover,
+.ats-overflow-menu.k-primary.k-state-hover,
+.ats-overflow-menu.k-primary:hover:active,
+.ats-overflow-menu.k-primary:hover {
+    border-left-width: 1px;
+    border-color: #dbdbdb;
+    color: #fff;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    line-height: 0.4em;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2), 0px 2px 3px rgba(0,0,0,0.05) !important;
+    background-color: #3f51b5 !important;
+}
+*/
+
+
+/*
+Put this in if you want to un-clip column headers, but they will bleed into other columns  
+    
+.k-grid th.k-header {
+    overflow: visible; 
+    white-space: normal
+}
+
+*/
+
+
+/*REMOVED and is represented in in single class that wants pointer overrides for kendo and other classes.
+    
+    .treeview-cursor.k-treeview span.k-in {
+    cursor: pointer;
+}*/
+
+
+/* ===================================================
+    END STYLES TO CONSIDER TRASHING 
+
+    DO NOT ADD STYLES BELOW HERE < ADD THEM ABOVE THE 
+    STYLE TRASH CAN IF THEY ARE TO LEGIT TO QUIT!
+    =================================================== */

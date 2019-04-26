@@ -1,0 +1,807 @@
+/* _________________________________________________________________________________________________________________
+    APP.CSS - An App contains and app bar for navigation, content region for hosting an area's content.
+
+    These are common styles that are used to build the app page's structure, these are custom on top of the
+    bootstrap, kendo, and other class libraries. If you are bulding something custom that changes the structure
+    or setup of an app page. OR if you are building something that is used across multiple app pages.
+    This is the place to host it. 
+_________________________________________________________________________________________________________________ */
+
+
+
+/* ===================================================
+     APP BAR
+
+     Located on left side of screen, contains icons 
+     that support app fuctions.
+    =================================================== */
+
+.appbar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    margin-bottom: 0px;
+    border-right: 1px solid #000000;
+    border-radius: 0px;
+}
+
+/*APPBAR ACCENT COLORS*/
+.nav > li > button.bar-button-active,
+.nav > li > button:hover.bar-button-active,
+.nav > li > button:focus.bar-button-active {
+    background-color: #188c2b;
+}
+
+.nav > li > button:hover,
+.nav > li > button:focus {
+    background-color: rgba(100, 100, 100, 0.30);
+}
+
+.nav-stacked > li > button {
+    color: #ffffff;
+    background-color: #232323;
+    margin-top: 0px;
+    border: none;
+    border-left: 0px;
+    border-bottom: 1px solid #171717;
+    width: 49px;
+    height: 41px;
+}
+
+
+.nav-stacked > li + li {
+    margin-top: 0px;
+}
+
+.sidenavbar-item {
+    color: #ffffff;
+    margin-top: 0;
+    border: none;
+    border-bottom: 1px solid #171717;
+    width: 49px;
+    height: 41px;
+}
+
+.sidenavbar-item-disabled {
+    cursor: not-allowed;
+}
+
+.sidenavbar-item-selected {
+    background-color: #188c2b;
+}
+
+.sidenavbar-item-unselected {
+    background-color: #232323;
+}
+
+    .sidenavbar-item-unselected:hover,
+    .sidenavbar-item-unselected:focus {
+        background-color: rgba(100, 100, 100, 0.30);
+    }
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    APPBAR TOOLTIP
+     
+    Override for Kendo Tooltip, this is the custom tooltip
+    seen on the appbar when hovering over one of the
+    buttons.
+    =================================================== */
+
+/* This class will be injected into the tooltip container, normally unreachable */
+.ats-appbar-tooltip {
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: .8em;
+    background: black !important;
+    padding: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+    /*  Override the global styles that chrome.css injects for ALL standard tooltips.  */
+    .ats-appbar-tooltip.k-widget.k-tooltip {
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2);
+    }
+
+    .ats-appbar-tooltip .ats-appbar-tooltip-name {
+        display: inline-block;
+        font-weight: bold;
+        color: #fafafa;
+        padding: 10px;
+    }
+
+    .ats-appbar-tooltip .ats-appbar-tooltip-accesskey {
+        display: inline-block;
+        background: #4caf50;
+        color: #ffffff;
+        padding: 10px;
+    }
+
+    .ats-appbar-tooltip .k-callout-w {
+        border-right-color: rgba(0,0,0,1.0);
+        left: -10px;
+    }
+
+    .ats-holiday {
+        color: red;
+    }
+/*============= END =============*/
+
+
+
+
+
+
+/* ===================================================
+    SLIDE OUT APP BAR MENU
+
+    When activated menu slides out from left to right.
+    =================================================== */
+
+#wrapper {
+    padding-left: 0px;
+}
+
+#sidebar-wrapper {
+    z-index: 990;
+    position: fixed;
+    left: 298px;
+    margin-left: -250px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-right: 1px solid #cecece;
+    bottom: 0px;
+    top: 50px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+    #page-content-wrapper.sidebar-margin {
+        padding-left: 49px;
+    }
+
+/*At a smaller display size the content should reduce slideout if open and remain fluid and responsive*/
+@media(min-width:769px) {
+
+    #wrapper.toggle {
+        padding-left: 250px;
+    }
+
+        #wrapper.toggle #sidebar-wrapper {
+            width: 250px;
+        }
+}
+
+@media(max-width:768px) {
+
+    #wrapper.toggle {
+        padding-left: 150px;
+    }
+
+        #wrapper.toggle #sidebar-wrapper {
+            width: 150px;
+        }
+}
+
+.nodesarea-wrapper {
+    padding-left: 0;
+}
+
+.slideout-wrapper {
+    z-index: 990;
+    position: fixed;
+    left: 298px;
+    margin-left: -250px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-right: 1px solid #cecece;
+    bottom: 0;
+    top: 52px;
+    width: 150px;
+}
+
+.nodesarea-wrapper-collapsed {
+    padding-left: 150px;
+}
+
+.filterarea-wrapper {
+    padding-left: 0;
+}
+
+.filterarea-wrapper-collapsed {
+    padding-left: 150px;
+}
+
+@media(min-width:768px) {
+
+    .nodesarea-wrapper-collapsed {
+        padding-left: 250px;
+    }
+
+    .slideout-wrapper {
+        width: 250px;
+    }
+
+    .filterarea-wrapper-collapsed {
+        padding-left: 250px;
+    }
+}
+
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    APP STICKY HEADER PANEL
+     
+    Used in app as a container that appears on scroll. 
+    It is a modified well from Bootstrap
+    =================================================== */
+
+.sticky-header {
+    min-height: 20px;
+    padding: 0px 19px;
+    margin-top: -2px;
+    background-color: #fffad8;
+    border: none;
+    border-bottom: 1px solid #ffd800;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    position: fixed;
+    z-index: 1001;
+    left: 51px;
+    right: 20px;
+    /*font-size: 80%;*/
+}
+/*============= END =============*/
+
+/*
+    Used for sticky headers arrow
+*/
+.btn-panel-arrow.stickyheaderarrow {
+    margin: -34px -10px 0px 0px;
+}
+
+
+/* ===================================================
+    APP ALERT BULETIN BAR
+     
+    Any app that contains red bar and contains high
+    priority messages, or critical atributes and Notes.
+    =================================================== */
+.app-alertbar-wrapper {
+    margin-right: 19px;
+    position: fixed;
+    z-index: 1001;
+    left: 51px;
+    right: 0px;
+}
+
+@media(min-width:769px) {
+
+    .app-toggle {
+        left: 298px;
+    }
+}
+
+@media(max-width:768px) {
+
+    .app-toggle {
+        left: 198px;
+    }
+}
+
+.status-text {
+    float: right;
+    min-width: 220px;
+    padding-top: 10px;
+    min-height: 40px;
+    text-align: center;
+}
+
+    .status-text > h4,
+    h4.status-text {
+        color: #ffffff;
+    }
+
+.status-container {
+    right: 0px;
+    position: absolute;
+    top: 0px;
+    z-index: 900;
+}
+
+
+
+.app-alertbar {
+    border-radius: 0px;
+    border-top: 0px;
+    margin-top: -2px;
+    margin-bottom: 2px;
+    margin-left: -1px;
+    margin-right: 1px;
+    background-color: #ff0000;
+    border-color: #ff7272;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 7px 15px 5px;
+}
+
+    .app-alertbar > div {
+        margin-right: -2px;
+    }
+
+    .app-alertbar span,
+    .app-alertbar strong,
+    .app-alertbar i,
+    .app-alertbar small {
+        color: white;
+    }
+
+    .app-alertbar .badge {
+        display: inline;
+        background-color: white;
+        color: red;
+        float: right;
+        margin: 10px 0;
+    }
+
+    .app-alertbar .btn-panel-arrow-text {
+        padding: 0;
+    }
+
+    .app-alertbar .btn-panel-arrow {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+/* notification tooltips */
+.app-alertbar-notes-tooltip h4 {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* messages */
+
+.app-alertbar-messages { /* perfect-scrollbar requires poisition and height settings */
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.app-alertbar-messages-item {
+    overflow-x: hidden !important;
+    padding-bottom: 10px;
+}
+
+    .app-alertbar-messages-item i,
+    .app-alertbar-messages-item span {
+        color: red;
+    }
+
+/* notes */
+
+.app-alertbar-notes {
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.app-alertbar-notes-items > div:last-child hr {
+    display: none;
+}
+
+.app-alertbar-notes-items {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.app-alertbar-notes-buttons {
+    margin-top: 10px;
+    margin-bottom: -15px;
+    border-top: 1px solid #dfdfdf;
+    padding: 10px 15px;
+}
+
+    .app-alertbar-notes-buttons button {
+        padding: 0 5px;
+        margin: 0;
+        border-left: 1px solid #5a5a5a !important;
+        border-radius: 0;
+        text-transform: capitalize;
+    }
+
+        .app-alertbar-notes-buttons button:first-child {
+            padding-left: 0;
+            border-left: none !important;
+        }
+
+.app-alertbar-notes-item {
+    overflow-x: hidden !important;
+    padding: 10px;
+}
+
+.notification-list-item .left-bordered-text {
+    border-left: 1px solid #5a5a5a;
+    padding-left: 5px;
+}
+
+.notification-list-item .attribute-details-table tr > td {
+    padding-right: 30px;
+    min-width: 150px;
+}
+
+.app-alertbar-button {
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    padding: 0px 15px;
+    margin: 0;
+    border-radius: 0px;
+}
+
+    .app-alertbar-button:hover {
+        background-color: #dF0101;
+    }
+
+    .app-alertbar-button.active {
+        background-color: #dF0101;
+    }
+
+    .app-alertbar-button > strong {
+        display: inline-block;
+        width: 140px;
+        white-space: initial;
+        margin: 0;
+    }
+
+.ten-top-bottom-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.border-top-thin {
+    border-top: thin solid #dfdfdf;
+}
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+    COMPANY BANNER
+
+    Styling for Company banner on pages that display 
+    current and select company.
+   =================================================== */
+
+.company-banner {
+    background-color: #f9ce1d !important;
+    text-transform: capitalize
+}
+
+.company-banner-text {
+    margin-left: 15px;
+    font-weight: bold !important;
+    vertical-align: initial;
+    text-transform: unset;
+}
+
+.company-banner span {
+    margin-left: 0;
+}
+
+.company-banner-selectbox {
+    float: right !important;
+    margin-top: 0.1em !important;
+}
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    CONTACT PHONE NUMBERS & EMAILS
+
+    Used wherever multiple contacts types are being 
+    displayed. Phone and email is displayed, with primary 
+    higlighted with a star
+    =================================================== */
+
+.table-contacts {
+    margin-top: 1.71em;
+    margin-bottom: 5px;
+}
+
+    .table-contacts > tbody > tr > td,
+    .table-contacts > tbody > tr > th,
+    .table-contacts > tfoot > tr > td,
+    .table-contacts > tfoot > tr > th,
+    .table-contacts > thead > tr > td,
+    .table-contacts > thead > tr > th {
+        padding: 1px 8px;
+    }
+
+.primary-contact {
+    background-color: #f9ce1d;
+}
+
+.right-radius {
+    border-radius: 15px 0px 0px 15px;
+    text-align: center;
+    width: 25px;
+}
+
+.left-radius {
+    border-radius: 0px 15px 15px 0px;
+    width: 100px;
+}
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    APP SLIDEOUTS
+     
+    Used to style Slideout structure of an app.
+    =================================================== */
+
+.slideout-header {
+    background-color: #e1e1e1;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0px;
+    height: 40px;
+    width: 250px;
+    font-size: 0.8em;
+    border-bottom: 1px solid #d1d1d1;
+    position: fixed;
+    z-index: 2;
+    padding-top: 12px;
+    padding-left: 21px;
+}
+
+    .slideout-header a {
+        color: #666666;
+    }
+
+.slideout-content {
+    padding-top: 40px;
+    z-index: 1;
+}
+
+.slideout-nodenavigationtree {
+    padding-bottom: 55px;
+}
+
+.date-time-stamp {
+    font-size: 90%;
+    padding-top: .3em;
+    color: #808080;
+}
+
+.slideout-journal-entry {
+    padding: 5px 20px;
+    font-size: 90%;
+}
+
+    .slideout-journal-entry > div > blockquote {
+        font-size: 90%;
+        margin: 0px;
+    }
+
+@media(max-width:768px) {
+    .slideout-header {
+        width: 150px;
+    }
+}
+
+/*============= END =============*/
+
+
+
+
+/* ===================================================
+    APP FAILOVERS LOADER
+     
+    Used to style loader icon
+    =================================================== */
+
+.loader {
+    background: -webkit-linear-gradient(to bottom left, #eeeeee, #767676); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to bottom left, #eeeeee, #767676); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to bottom left,none,none); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom left, #eeeeee, #767676); /* Standard syntax (must be last) */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #808080;
+}
+
+
+/*============= END =============*/
+
+
+
+/* ===================================================
+   BOOTSTRAP OVERIDE FOR .MEDIA
+
+    These classes override the Media Class in bootstrap, 
+    so the notes with employee image work.
+    =================================================== */
+
+.media-left .fa-stack {
+    margin: -5px 5px 0 0;
+}
+
+.media:last-child hr {
+    display: none;
+}
+
+/*============= END =============*/
+
+
+
+
+
+/* ===================================================
+    CIRCLE - METER CHANGE OUT
+     
+    Circle appears in between 2 columns that show meter
+    that is changing. "From Old Column 1 > To New, Column 2"
+    =================================================== */
+.circle {
+    border-radius: 50%;
+    border: solid 2px #4caf50;
+    background: #ffffff;
+    text-align: center;
+    color: #4caf50;
+    position: absolute;
+    z-index: 400;
+}
+
+    .circle > i {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .circle.hidden-xs {
+        left: 21em;
+        top: 15em;
+    }
+
+    .circle.visible-sm {
+        left: 47%;
+        top: 33%;
+    }
+
+@media(min-width:769px) {
+
+    .circle-margin {
+        margin-left: 15px;
+    }
+}
+
+@media(max-width:768px) {
+
+    .circle-margin {
+        margin-left: 0px;
+    }
+}
+
+
+/* ===================================================
+   Parcel Ownership Circle
+     
+    Circle appears in between 2 columns that show meter
+    that is changing. "From Old Column 1 > To New, Column 2"
+    =================================================== */
+
+.circle.po-circle.hidden-xs {
+    left: 25.55em;
+    top: 23em;
+}
+
+.circle.po-circle.visible-sm {
+    left: 45%;
+    top: 57%;
+}
+
+/*============= END =============*/
+
+/* ==============================================
+    Reports browser css
+*/
+
+
+.report {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr;
+}
+
+.report-companybanner {
+    grid-column: 1/ -1;
+    grid-row: 1 / 2;
+}
+
+.report-header {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+}
+
+.report-filters {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    border-bottom: 1px solid transparent;
+}
+
+.panel-default .report-filters {
+    border-bottom-color: #ddd;
+    padding: 10px 15px;
+}
+
+.report-viewer {
+    grid-column: 1 / -1;
+    grid-row: 4 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+/*============= END =============*/
+
+/*
+
+
+
+/* ===================================================
+    STYLES TO CONSIDER TRASHING as of JULY 31, 2016
+
+    Based on a clean sweep these styles do not make sense to remain. 
+    Because they either are old and outdated, or they do not support 
+    the standards sought in code.
+    =================================================== */
+
+
+
+/*.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}*/
+
+/***
+    Address component (atsAddress)
+
+    There is specificity applied to these styles because they represent the 
+    `hcard` format, `adr`.
+
+    See https://developer.mozilla.org/en-US/docs/Web/HTML/microformats#Adr_microformat
+***/
+
+/* 
+    Country should be on the next line according to USPS and we store the country
+    abbreviation, so we should use `<abbr>` for context. But its `display` value is
+    `inline`, so to get it to the next line make it `block`, but only if we are 
+    using `<abbr>`.
+*/
+.vcard > .adr abbr.country-name {
+    display: block;
+}

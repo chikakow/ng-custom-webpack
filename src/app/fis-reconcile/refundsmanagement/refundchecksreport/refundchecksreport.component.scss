@@ -1,0 +1,219 @@
+
+
+.k-dialog-titlebar {
+    border-color: inherit;
+    color: #fff;
+    background-color: #f9ce1d !important;
+}
+
+
+::ng-deep .k-grid-toolbar .k-button + .k-button {
+    margin-left: 0px !important;
+}
+
+
+#page-content-wrapper.sidebar-margin {
+    padding-left: 65px;
+}
+
+
+
+.company-banner {
+    background-color: #f9ce1d !important;
+    text-transform: capitalize;
+    color: #212529;
+    font-size: 15px;
+}
+
+.dialogOpened {
+    bottom: 300px
+}
+
+.company-banner-text {
+    margin-left: 15px;
+    font-weight: bold !important;
+    vertical-align: initial;
+    text-transform: unset;
+}
+/*.h1 {
+    color: #2f2f2f;
+    font-family: "Roboto-Thin", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}*/
+.k-window-actions {
+    color: black !important;
+}
+
+
+.journal {
+    width: 431px;
+    height: auto;
+    position: absolute;
+    right: -178px;
+    background-color: #fff;
+    top: 53px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 10002;
+}
+
+::ng-deep .k-callout {
+    color: #ffffff !important;
+}
+
+.tooltipcustomclass-journal * {
+    /*font-size: 1.1em;
+    background: transparent;
+    margin: -2px -2px -2px -3px;
+    padding: 1px 1px 1px 1px;*/
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px 10px 0px;
+    background: white;
+    border: none;
+}
+
+
+h5 {
+    font-size: 1.0em;
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    margin-top: 0.2em;
+    line-height: 1.16667;
+}
+
+span.k-icon.k-i-arrow-60-down.arrow1 :hover {
+    color: aqua;
+}
+
+.arrow1 {
+    color: #444444;
+    padding-left: 6px;
+}
+
+.k-menu-expand-arrow.k-i-arrow-60-down, .k-menu-expand-arrow.k-i-arrow-s::before, .k-menu-expand-arrow.k-i-sarrow-s::before, .k-menu-expand-arrow.k-i-collapse::before, .k-menu-expand-arrow.k-i-expand-s::before {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.k-menu.k-menu-horizontal:not(.k-context-menu) {
+    padding: 0px;
+}
+
+.panel_title_margin {
+    margin-left: -570px;
+}
+
+.filter_checkRefund_margin {
+    margin-left: 24px;
+}
+
+.refundCheckFilterUl {
+    display: inline-flex;
+    background: none;
+}
+
+.icon_color {
+    color: black;
+}
+
+.sourceFilterPopupDiv {
+    width: 217.984px;
+    height: 104.004px;
+    overflow: hidden;
+    z-index: 10002;
+    top: 0px;
+    left: 0px;
+    box-sizing: content-box;
+    display: block;
+    position: absolute;
+}
+
+.sourceFilterPopupUl {
+    display: block;
+    max-height: 484.996px;
+    overflow: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transform: translateY(0px);
+}
+
+.dateRangeFilterPopupDiv {
+    width: 192.578px;
+    height: 200px;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    z-index: 10002;
+    top: 1.0313px;
+    left: 0px;
+}
+
+.dateRangeFilterPopupUl {
+    display: block;
+    max-height: 963px;
+    overflow: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transform: translateY(0px);
+}
+
+.datePickerWidth {
+    width: 204px;
+}
+
+.printButton {
+    background-color: #3f51b5;
+    padding: 8px;
+    border: none;
+    color: white;
+}
+
+.faIconPrint {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.printFontZize {
+    font-size: 16px;
+}
+
+.journalButton {
+    background-color: #3f51b5;
+    padding: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.journalIcon {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.barIcon {
+    float: right;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.checkReportPdf {
+    left: 362px !important;
+    top: 262px !important;
+}
+
+.columnsPopup {
+    color: black;
+    padding: 0px 4px;
+}
+
+.btnBackground {
+    background: white;
+}

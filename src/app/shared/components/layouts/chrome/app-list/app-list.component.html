@@ -1,0 +1,117 @@
+
+<button #anchor (click)="toggle()" type="button" class="chrome-button pull-left" style="cursor:pointer"> <span class="fa fa-th fa-lg"></span></button>
+<kendo-popup #popup [anchor]="anchor" popupClass="content" *ngIf="show" class="applistpopup">
+    <div class="overlay-blocker" *ngIf="isOverlayBusy">
+        <div>
+            <div>
+                <i class="fa fa-circle-o-notch fa-4x fa-spin loader" style="padding: 106px;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay-blockerHistory" *ngIf="isOverlayError">
+        <div class="overlay-content" style="padding:47px">
+            <i class="fa ats-warning-doc fa-4x"></i>
+            <br>
+            <span class="ng-binding">Uh oh, something happened while loading the data.</span>
+
+        </div>
+    </div>
+
+    <!--<app-appoverlay [overlayisBusy]="isOverlayBusy" [overlayisError]="isOverlayError" *ngIf="isOverlayBusy || isOverlayError"></app-appoverlay>-->
+
+    <div class="appListControl" *ngIf="!isOverlayBusy && !isOverlayError">
+
+        <div class="applist-control-div pull-left">
+            <div class="input-group applist-search pull-left">
+
+                <div class="searchdiv">
+                    <input type="text"
+                           class="form-control pull-left searchtext"
+                           placeholder={{appI18n.AppSearchPlaceholder|translate}}
+                           [(ngModel)]="queryString">
+
+                    <i class="fa fa-search fa-fw"></i>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="appListGroup appListdiv" *ngIf="!queryString">
+
+                <div *ngFor="let app of pagedItems | filterdata: queryString : 'name' ; let i = index " class="divbtn  nav-appItem applist-item {{app.color}}" style="padding:0 0 0 0;">
+                    <div kendoTooltip tooltipClass="tooltipcustomclass" #tooltip="kendoTooltip" [tooltipTemplate]="template" showOn="none" position="top" filter='.btn-xs'>
+                        <button type="button" class="btn btn-xs pull-right" style="padding:0 0 0 0;background: none;" (click)="tooltip.toggle(second)">
+                            <i #second class="fa fa-ellipsis-h fa-fw ellipsisicon"></i>
+                        </button>
+
+                        <ng-template #template>
+                            <div class="k-animation-container" style="width: 202.688px; height: 58px; overflow: visible; z-index: 10012;left: -16px;top: 16px;box-sizing: content-box; display: block; position: absolute;" aria-hidden="false">
+                                <ul class="appListOptionMenu k-widget k-reset k-header k-menu k-menu-vertical k-context-menu k-popup k-group k-state-border-up" style="display: block; position: absolute; font-size: 12px; font-stretch: 100%; font-style: normal; font-weight: 400;line-height: 12px; transform: translateY(0px); height: 74px;" data-role="contextmenu" tabindex="0" role="menubar" aria-hidden="false">
+                                    <li class="k-item k-state-default k-last " role="menuitem">
+                                        <span class="k-link k-menu-link">
+                                            &nbsp;<i class="fa fa-thumb-tack"></i>&nbsp;
+                                            <span style="margin-top: -2px;">{{ chrome.PinToPortal | translate }}</span>
+                                        </span>
+                                    </li>
+                                    <li class="k-item k-state-default k-last" role="menuitem">
+                                        <span class="k-link k-menu-link">
+                                            &nbsp;<i class="fa fa-external-link"></i>&nbsp;
+                                            <span style="margin-top: -2px;">{{ chrome.OpenInNewWindow | translate }}</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="app-name apptitle" (click)="navigationRoute(app.url, app.moduleName)">
+                        <i class="fa {{app.image}} fa-2x fa-fw"></i>
+                        <!--<a routerLinkActive="active" routerLink="/company/1/reconcile">Reconcile</a>-->
+                        <p class="app-title">
+                            {{ app.name | translate }}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="appListSearchResults" *ngIf="queryString">
+            <div class="app-search-result"
+                 *ngFor="let app of data | filterdata: queryString : 'name' ; let i = index "
+                 [ngClass]="{ 'app-search-result-selected': i === 0 }"
+                 (click)="navigationRoute(app.url, app.moduleName)">
+
+                <div class="{{app.color}} pull-left applist-search-appicon" style="height:30px">
+                    <i class="fa {{app.image}} fa-fw"></i>
+                </div>
+                <p class="pull-left app-search-result-name">
+                    {{app.name}}
+                </p>
+                <button type="button"
+                        class="k-button pull-right applist-search-menu"
+                        ng-focus="apl.onSearchResultEllipsisFocus($index)"
+                        ng-click="apl.showContextMenu($event, app)">
+                    <i class="fa fa-ellipsis-h fa-fw"></i>
+                </button>
+            </div>
+        </div>
+
+        <div style="text-align:center;" *ngIf="!queryString" id="pagerdiv">
+            <ul *ngIf="pager.pages && pager.pages.length" class="paging">
+                <li aria-hidden="false" *ngFor="let page of pager.pages">
+                    <a (click)="setPage(page)" tabindex="1">
+                        <i class="fa fa-square square" [ngClass]="{active:pager.currentPage === page}" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="k-callout k-callout-n" style="left: 24px;top: -11px"></div>
+
+</kendo-popup>
+
+
+

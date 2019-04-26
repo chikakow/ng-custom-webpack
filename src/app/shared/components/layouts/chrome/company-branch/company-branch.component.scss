@@ -1,0 +1,60 @@
+.triangle-up {
+    position: relative;
+    top: -20px;
+    left: 271px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #ffffff;
+}
+
+h5 {
+    font-size: 1.0em;
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    margin-top: 0.2em;
+    line-height: 1.16667;
+}
+
+.top_main_box {
+    float: left;
+    width: 406px;
+    margin: 4px;
+    height: auto;
+    padding: 4px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 1px 5px 5px 2px rgba(0,0,0,0.1);
+}
+
+.popboxCompany {
+    width: 392px;
+    height: auto;
+    position: absolute;
+    background-color: #fff;
+    top: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10002;
+    float: right;
+    top: 54px !important;
+}
+
+.k-callout-n {
+    border-bottom-color: #ffffff;
+    left: 293px;
+    top: -11px;
+}
+
+.inc-width {
+    width: 351px
+}
+
+.ddl-select {
+    font-size: 14px;
+    padding: 1px 11px;
+    min-height: 2.143em;
+    line-height: 2.143em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+}

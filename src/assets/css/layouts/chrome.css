@@ -1,0 +1,689 @@
+/* _________________________________________________________________________________________________________________
+	CHROME.CSS - Navigation that is found across the system it contains the APP LAUNCHER, HISTORY, EMPLOYEE PROFILE, 
+    and other buttons that are used cross the entire platform.
+
+    These are common styles that are used to build the chrome that are in addition to the bootstrap, kendo, and
+    other class libraries. If you are bulding something custom for the chrome. This is the place to host it.
+
+_________________________________________________________________________________________________________________ */
+
+
+/* ===================================================
+	CHROME WRAPPER
+	 
+	Main content window required when chrome is present.
+	=================================================== */
+
+.chrome-wrapper {
+    left: 0px;
+    top: 51px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* ===================================================
+     CHROME
+
+     Fixed primary navigation bar located at top of Site 
+     page. All these styles affect it's appearance.
+    =================================================== */
+
+.chrome {
+    border-color: #1d852e;
+    box-shadow: 0px 0px 5px #1d1d1d;
+    background-color: #1b9d30;
+    height: 50px;
+}
+
+
+.navbar-inverse .chrome {
+    /* background-image: url('../../images/logo.png'); */
+    background-image: url('/dist/ClientApp/assets/images/logo.png');
+    background-size: 10em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #1b9d30;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #188c2b;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: #ffffff;
+        background-color: #157b26;
+    }
+
+.navbar-inverse .badge { /* ====== Badge Counts in chrome buttons  ====== */
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: .68em;
+    position: absolute;
+    margin-top: 23px;
+    margin-left: 26px;
+    padding: 3px 5px;
+    z-index: 1000;
+}
+
+.bar-button-active {
+    background-color: #157b26;
+}
+
+.chrome-button {
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    padding: 15px 15px;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+.container-fluid > .navbar-header.launcher-nomargin {
+    margin-left: -15px;
+}
+
+.chrome-button.navbar-toggle:focus,
+.chrome-button.navbar-toggle:hover,
+.chrome-button.bar-button-active:focus,
+.chrome-button:hover,
+.k-state-border-down.bar-button-active {
+    background-color: #157b26;
+}
+
+
+.k-widget.k-tooltip {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    color: #1d1d1d;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.k-callout-n {
+    border-bottom-color: #ffffff;
+}
+
+/* ================  END CHROME BAR  ================ */
+
+
+
+
+
+/* ===================================================
+    CHROME TOOLTIP STYLES
+
+    Class overides to accomplish the tool tips seen in 
+    the chrome.
+    =================================================== */
+
+.k-tooltip-closable .k-tooltip-content {
+    padding-right: 0px;
+}
+
+.k-tooltip {
+    padding: 0px;
+}
+
+.k-tooltip-button {
+    visibility: collapse;
+}
+
+.btn-tooltip {
+    background-color: #eeeeee;
+    border-color: transparent;
+    border-radius: 0px;
+    border: 0px #eeeeee solid;
+    padding: 10px 0;
+    margin-right: -10px;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+    .btn-tooltip:hover {
+        background-color: #d1d1d1;
+        border-color: transparent;
+    }
+
+.panel-tooltip {
+    width: 500px;
+    text-align: left;
+}
+
+    .panel-tooltip > .k-menu .k-item, .panel-tooltip > .k-widget.k-menu-horizontal > .k-item, .panel-tooltip > ul.k-menu-vertical > .k-item {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .panel-tooltip > .k-menu > .k-item > .k-link {
+        white-space: normal;
+    }
+
+.tooltip-lg {
+    width: 410px;
+}
+
+.tooltip-md {
+    width: 350px;
+}
+
+.tooltip-sm {
+    width: 200px;
+}
+
+.tooltip-xs {
+    width: 100px;
+}
+
+.panel-tooltip-content {
+    padding: 15px;
+}
+
+.panel-tooltip-header {
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+/* ================  END  ================ */
+
+
+
+
+
+/* ===================================================
+    TOOLTIP NOTIFICATIONS
+
+    Classes used for tooltip notifications that appear 
+    under the chrome button
+    =================================================== */
+
+
+.ats-notification > .k-menu .k-item .k-item,
+.ats-notification > ul > .k-item {
+    display: block;
+    float: none;
+    margin-bottom: 15px;
+    border-width: 1px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.ats-notification > .k-menu .k-item .k-link {
+    padding: 0px;
+}
+
+.ats-notification-icon > i {
+    height: 65px;
+    width: 90px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* ================  END  ================ */
+
+
+
+
+
+/* ===================================================
+    TOOLTIP APP LIST/ APP LAUNCHER
+
+    Classes used for app launcher.
+    =================================================== */
+
+
+/* ==== APP COLORS - These are standard color choices for apps.  === */
+
+.app-bg1 {
+    color: #ffffff;
+    background-color: #3f51b5;
+}
+
+.app-bg2 {
+    color: #ffffff;
+    background-color: #03a9f4;
+}
+
+.app-bg3 {
+    color: #ffffff;
+    background-color: #4caf50;
+}
+
+.app-bg4 {
+    color: #ffffff;
+    background-color: #ff0000;
+}
+
+.app-bg5 {
+    color: #ffffff;
+    background-color: #ff9800;
+}
+
+.app-bg6 {
+    color: #ffffff;
+    background-color: #f9ce1d;
+}
+
+.app-text1 {
+    color: #3f51b5;
+}
+
+.app-text2 {
+    color: #03a9f4;
+}
+
+.app-text3 {
+    color: #4caf50;
+}
+
+.app-text4 {
+    color: #ff0000;
+}
+
+.app-text5 {
+    color: #ff9800;
+}
+
+.app-text6 {
+    color: #f9ce1d;
+}
+
+.app-btn1 {
+    color: #ffffff;
+    background-color: #3f51b5;
+}
+
+.app-btn2 {
+    color: #ffffff;
+    background-color: #03a9f4;
+}
+
+.app-btn3 {
+    color: #ffffff;
+    background-color: #4caf50;
+}
+
+.app-btn4 {
+    color: #ffffff;
+    background-color: #ff0000;
+}
+
+.app-btn5 {
+    color: #ffffff;
+    background-color: #ff9800;
+}
+
+span.app-btn5 > a > i {
+    color: #ffffff;
+    background-color: #ff9800;
+}
+
+.app-btn6 {
+    color: #ffffff;
+    background-color: #f9ce1d;
+}
+
+.app-btn7 {
+    color: #ffffff;
+    background-color: #8e8e8e;
+}
+
+.app-btn8 {
+    color: #ffffff;
+    background-color: #575757
+}
+
+.app-btn9 {
+    color: #ffffff;
+    background-color: #a020d8;
+}
+
+.app-btn10 {
+    color: #ffffff;
+    background-color: #d6bc19;
+}
+
+.app-btn11 {
+    color: #ffffff;
+    background-color: #19d6ba;
+}
+
+
+    .app-btn1:hover, .app-btn2:hover, .app-btn3:hover, .app-btn4:hover, .app-btn5:hover, .app-btn6:hover {
+        color: #fff;
+        background-color: #2f2f2f;
+        border: solid #808080 1px;
+    }
+
+    .app-btn1:focus, .app-btn2:focus, .app-btn3:focus, .app-btn4:focus, .app-btn5:focus, .app-btn6:focus {
+        color: #fff;
+        border-color: #03a9f4;
+    }
+
+.app-btn1:hover {
+    background-color: #344396;
+    border: solid #3f51b5 1px;
+}
+
+.app-btn2:hover {
+    background-color: #0178ae;
+    border: solid #03a9f4 1px;
+}
+
+.app-btn3:hover {
+    background-color: #3c893f;
+    border: solid #4caf50 1px;
+}
+
+.app-btn4:hover {
+    background-color: #ab0202;
+    border: solid #ff0000 1px;
+}
+
+.app-btn5:hover {
+    background-color: #e48903;
+    border: solid #ff9800 1px;
+}
+
+.app-btn6:hover {
+    background-color: #e6ba03;
+    border: solid #f9ce1d 1px;
+}
+
+.app-tile:hover {
+    background-color: gainsboro;
+}
+
+/* ==== END APP COLORS === */
+
+
+
+/*=== APP LAUNCHER SLICK DOTS OVERIDE - These classes override the carousel dots on the app launcher. ====*/
+
+.slick-dots li button:before {
+    font-family: FontAwesome;
+    content: "\f0c8";
+    font-size: 10px;
+}
+
+.slick-dots li {
+    width: 0px;
+    height: 0px;
+    padding: 5px 11px;
+}
+
+    .slick-dots li button {
+        margin-left: -15px;
+    }
+/* === END APP LAUNCHER SLICK DOTS OVERIDE  === */
+
+
+
+/* === APP LIST SETUP  === */
+
+.applist-control-div {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+#mini-menu:hover, #mini-menu:focus {
+    visibility: visible;
+}
+
+.input-group.applist-search > input {
+    box-shadow: inset 0px 0px rgba(0,0,0,.075);
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: solid 1px #b1b1b1;
+}
+
+.applist-search-icon, .applist-search-icon:focus, .applist-search-icon:hover {
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+    border-left: 0px;
+    border-bottom: solid 1px #b1b1b1;
+}
+
+
+.applist-search-dropdown .k-dropdown-wrap {
+    background-color: #ffffff !important;
+    border-bottom: solid 1px #b1b1b1;
+    border-right: none;
+    border-radius: 0px;
+    border-top: none;
+}
+
+.app-menu-item-width .k-state-default {
+    width: 100%;
+}
+/*.applist-search-dropdown option {
+    background-color: #ff0000 !important;
+    border-bottom:solid 1px #b1b1b1;
+    border-radius: 0px;
+}*/
+
+
+/*.applist-search-dropdown .k-dropdown-wrap{
+    width: 100%;
+    background-color: red;
+    border:solid 1px #b1b1b1;
+}
+
+
+
+.applist-search-dropdown .k-input{
+    box-shadow: inset 0px 0px rgba(0,0,0,.075);
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: solid 1px #b1b1b1;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+}
+.applist-search-dropdown .k-select {
+
+     box-shadow: inset 0px 0px rgba(0,0,0,.075);
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: solid 1px #b1b1b1;
+    width: 20%;
+    background-color: rgb(255, 255, 255);
+}*/
+
+
+
+.applist-view {
+    background: none;
+    border: none;
+    box-shadow: rgba(255, 255, 255, 0.0) 0px 0px 0px 0px inset, rgba(0, 0, 0, 0.00) 0px 0px 0px 0px;
+    box-sizing: content-box;
+    color: rgb(255, 255, 255);
+    margin: 50px 5px 5px 5px;
+}
+
+.applist-item {
+    width: 90px;
+    height: 90px;
+    padding: 0px;
+    margin: 5px;
+    border-radius: 0;
+    text-align: unset;
+}
+
+    .applist-item > button {
+        box-shadow: inset 0px 0px rgba(0,0,0,.0);
+        border: 0px;
+        background-color: transparent;
+    }
+
+.applist-item {
+    text-align: center;
+}
+
+.app-icon {
+    padding-top: 20px;
+}
+
+.app-name {
+    margin-top: 21px;
+}
+
+.app-title {
+    font-size: 0.7em;
+    color: white;
+    text-align: center;
+    white-space: normal;
+    margin-top: 5px;
+    line-height: 1.2em;
+}
+
+.app-search-result {
+    border-bottom: 1px solid rgb(229,229,229);
+    height: 40px;
+    cursor: pointer;
+}
+
+.appListOptionMenu {
+    position: absolute;
+    z-index: 1000;
+    font-size: 12px !important; /* override inline styles set by Kendo at run-time */
+    line-height: 18px !important; /* override inline styles set by Kendo at run-time */
+}
+
+    .appListOptionMenu .k-link {
+        white-space: nowrap
+    }
+
+.app-search-result-name {
+    margin: 10px;
+    font-size: 12px;
+}
+
+.applist-search-menu {
+    margin: 2px;
+    float: right;
+}
+
+.applist-search-menu {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.applist-search-appicon {
+    padding: 5px 5px;
+    margin: 4px;
+}
+
+.appListControl {
+    width: 420px;
+    /*height: 390px;*/
+    height:370px;
+    overflow: hidden;
+}
+
+.appListContainer {
+    top: 39px; /* When this is higher than 39px, slick puts the carousel in the wrong spot in IE and it jumps on the first nav. */
+    text-align: left;
+    margin-left: 5px;
+    position: relative;
+}
+
+.appListSearchResults {
+    overflow-y: scroll;
+    position: relative;
+    margin-top: 35px;
+    height: 354px;
+}
+
+.appListGroup {
+    width: 410px;
+    height: 305px;
+}
+
+.app-search-result-selected {
+    background: lightblue;
+}
+
+/*============= END =============*/
+
+
+/* ===================================================
+   TOOLTIP - EMPLOYEE PROFILE 
+
+   Classes used on the employee image and infomration
+    
+=================================================== */
+.circular {
+    width: 80px;
+    height: 80px;
+    border: 8px #1b9d30 solid;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.panel-tooltip .tooltip-col {
+    margin-right: 20px;
+}
+
+/* ================  END  ================ */
+
+
+
+/* ===================================================
+   TOOLTIP - HISTORY
+
+   Classes used in the history grid within the tooltip
+   that opens in chrome, this button is also used on
+   the full history grid. 
+    
+=================================================== */
+
+.app-btn-histroy {
+    padding: .2em;
+    margin: 0px;
+    border-radius: 2px;
+    margin-right: 5px;
+    font-size: 0.938em;
+}
+
+/* ================  END  ================ */
+
+
+
+/* ===================================================
+    STYLES TO CONSIDER TRASHING as of JULY 31, 2016
+
+    Based on a clean sweep these styles do not make sense to remain. 
+    Because they either are old and outdated, or they do not support 
+    the standards sought in coed.
+    =================================================== */
+
+
+
+
+/* ========= Override class placed k-animation container of tooltip Add 30 px to right side of ttoltip to keep it from showing 
+    under scrollbar in browsers.========= 
+.panel-tooltip-right > .k-widget.k-tooltip {
+    right: 30px !important;
+}*/
+
+
+
+/* ========= override class placed in tool tip using function Add 30 px to right side of ttoltip to keep it from showing 
+    under scrollbar in browsers.========= 
+.panel-tooltip-right {
+    right: 30px !important;
+}*/

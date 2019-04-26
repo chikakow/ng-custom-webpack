@@ -1,0 +1,155 @@
+.k-grid tr.even {
+    background-color: transparent;
+}
+
+.k-grid tr.odd {
+    background-color: transparent;
+}
+
+.panel-Refund-heading {
+    padding: 10px;
+    //border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+}
+
+.line {
+    margin-top: -7px;
+}
+
+
+.marL12{
+    margin-left:12px;
+}
+
+.z_index_auto{
+    z-index:auto;
+}
+
+.color_black{
+    color:black;
+}
+
+.consumer-Billing {
+    width: 153.984px;
+    height: 63vh;
+    overflow: hidden;
+    z-index: 10002;
+    top: 0px;
+    left: 0px;
+    box-sizing: content-box;
+    display: block;
+    position: absolute;
+}
+
+.consumer-Billingul {
+    display: block;
+    max-height: 484.996px;
+    overflow: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transform: translateY(0px);
+}
+
+.company-banner {
+    background-color: #f9ce1d !important;
+    text-transform: capitalize;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.pull-right {
+    float: right !important;
+}
+.panel-body {
+    /*padding: 15px;*/
+    padding: 25px;
+    margin-top: -30px;
+}
+.panel-default > .panel-Refund-heading {
+    color: #333;
+    border-color: #ddd;
+}
+
+.column-Menu {
+    left: 1308px !important;
+    top: 50px !important;
+    width: 227px;
+    height: auto;
+    overflow: visible;
+    display: block;
+    position: absolute;
+    z-index: 10002;
+}
+
+::ng-deep .k-grid-toolbar .k-button + .k-button {
+    margin-left: 0px !important;
+}
+
+h5 {
+    font-size: 1.0em;
+    color: #2f2f2f;
+    font-family: Roboto-Medium, Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    margin-top: 0.2em;
+    line-height: 1.16667;
+}
+span.k-icon.k-i-arrow-60-down.arrow1 :hover {
+    color: aqua;
+}
+
+.arrow1 {
+    color: #444444;
+    padding-left: 6px;
+}
+
+.k-menu-expand-arrow.k-i-arrow-60-down, .k-menu-expand-arrow.k-i-arrow-s::before, .k-menu-expand-arrow.k-i-sarrow-s::before, .k-menu-expand-arrow.k-i-collapse::before, .k-menu-expand-arrow.k-i-expand-s::before {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.k-menu.k-menu-horizontal:not(.k-context-menu) {
+    padding: 0px;
+}
+
+.issueButton {
+    background-color: #3f51b5;
+    padding: 8px;
+    border: none;
+    color: white;
+    cursor: pointer
+}
+
+.issueIcon {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.importButton {
+    background-color: #3f51b5;
+    padding: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.importIcon {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.barsIcon {
+    float: right;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+}

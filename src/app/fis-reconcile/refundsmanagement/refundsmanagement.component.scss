@@ -1,0 +1,92 @@
+
+
+.sidebarMarginMin {
+    margin-left: 0px;
+}
+
+.sidebarMarginMax {
+    margin-left: -250px;
+}
+
+
+#page-content-wrapper.sidebar-margin {
+    padding-left: 50px;
+}
+
+
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+
+
+.panel-heading {
+    padding: 10px 584px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+}
+
+.row {
+    box-sizing: border-box;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+::ng-deep .k-grid-toolbar {
+    background-color: #3f51b5 !important;
+}
+
+.content {
+    padding: 30px;
+    color: #787878;
+    background-color: #fcf7f8;
+    border: 1px solid rgba(0,0,0,.05);
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+::ng-deep .k-icon k-plus {
+    content: "\f000";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    left: 0;
+}
+
+.popupjournal {
+    width: 158.078px;
+    height: 37px;
+    overflow: visible;
+    top: 284.813px;
+    z-index: 10002;
+    left: 580px;
+    box-sizing: content-box;
+    display: block;
+    position: absolute;
+}
+
+
+.columnMenu {
+    left: 1300px !important;
+    top: 30px !important;
+    width: 212px;
+    height: auto;
+    overflow: visible;
+    display: block;
+    position: absolute;
+    z-index: 10002;
+}
+
+
+
+::ng-deep.k-columnmenu-item {
+    padding-left: 27px !important;
+}

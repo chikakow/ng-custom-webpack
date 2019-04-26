@@ -1,0 +1,41 @@
+.note-panel {
+    border: none;
+    margin-right: 0
+}
+
+.note-color {
+    color: rgb(209, 209, 209);
+}
+
+.inline-flex{
+    display: inline-flex;
+}
+
+.inline-button {
+    display: inline;
+    color: inherit;
+    padding: 0 2px 0 8px;
+}
+
+.frm-notes-filter > * {
+    vertical-align: top;
+}
+
+.frm-notes-filter .k-link.k-menu-link {
+    padding: 0;
+}
+
+.list-view .no-data{
+    padding: 50px 15px;
+}
+
+.black-top-border{
+    border-top-color: #000;
+}
+
+.profile-photo-sm {
+    display: inline-block;
+    font-size: 40px;
+    padding: 7.5px;
+    text-align: center;
+}

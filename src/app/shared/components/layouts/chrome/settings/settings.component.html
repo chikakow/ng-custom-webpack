@@ -1,0 +1,22 @@
+
+
+<div style="position:relative">
+    <button #anchor (click)="toggle()" type="button" class="chrome-button pull-left" style="cursor:pointer;"> <span class="fa fa-cogs fa-fw"></span></button>
+    <div *ngIf="show" class="settings-popup">
+
+        <div class="k-tooltip-button"><a href="#" class="k-icon k-i-close" title="Close"></a></div> <div class="k-tooltip-content ng-scope">
+            <div class="panel-tooltip tooltip-sm">
+                <div class="panel-tooltip-content">
+                    <h5 class="panel-tooltip-header" i18n="chrome.SystemSettings">{{chrome.SystemSettings}}</h5>
+                </div>             
+                    <ul class="k-widget k-reset k-header k-menu k-menu-vertical" *ngIf="!isOverlayBusy && !isOverlayError">
+                        <li class="k-item k-state-default k-first k-state" *ngFor="let da of responseData">
+                            <span class="k-link k-menu-link" style="color:black">{{da.text}}</span>
+                        </li>
+                    </ul>              
+            </div>
+        </div>
+        <div class="k-callout k-callout-n"></div>
+        <app-appoverlay [overlayisBusy]="isOverlayBusy" [overlayisError]="isOverlayError" *ngIf="isOverlayBusy || isOverlayError"></app-appoverlay>
+    </div>
+</div>
