@@ -17,7 +17,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 // Libraries/Modules
 import { MiniPortalModule } from 'mini-portal';
-import { FisReconcileModule } from 'fis-reconcile';
+
 import { CoreFoundationModule, KendoUiAngularModule } from 'core-foundation';
 
 import * as angular from 'angular';
@@ -37,7 +37,6 @@ import { SiteComponent } from './shared/components/layouts/site/site.component';
 // import { KendoUiAngularModule } from './shared/modules/kendo-ui-angular/kendo-ui-angular.module';
 //import '@progress/kendo-ui';
 
-import { FisReconcileComponent } from 'fis-reconcile';
 import { SiteService } from 'core-foundation';
 import { RefundsmanagementComponent } from './fis-reconcile/refundsmanagement/refundsmanagement.component';
 import { GeneraterefundsComponent } from './fis-reconcile/refundsmanagement/generaterefunds/generaterefunds.component';
@@ -45,6 +44,7 @@ import { HeldrefundsComponent } from './fis-reconcile/refundsmanagement/heldrefu
 import { PotentialrefundsComponent } from './fis-reconcile/refundsmanagement/potentialrefunds/potentialrefunds.component';
 import { RefundchecksreportComponent } from './fis-reconcile/refundsmanagement/refundchecksreport/refundchecksreport.component';
 import { ReportrefundsComponent } from './fis-reconcile/refundsmanagement/reportrefunds/reportrefunds.component';
+import { RefundsmanagementModule } from './fis-reconcile/refundsmanagement/refundsmanagement.module';
 
 (function () {
     'use strict';
@@ -99,18 +99,13 @@ import { ReportrefundsComponent } from './fis-reconcile/refundsmanagement/report
         SettingsComponent,
         HistoryComponent,
         SiteComponent,
-        RefundsmanagementComponent,
-        GeneraterefundsComponent,
-        HeldrefundsComponent,
-        PotentialrefundsComponent,
-        RefundchecksreportComponent,
-        ReportrefundsComponent
+
         // , MyExampleDirective
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-       
+       RefundsmanagementModule,
         // we want to get away from angular routing
         // AppRoutingModule,
         HttpClientModule,

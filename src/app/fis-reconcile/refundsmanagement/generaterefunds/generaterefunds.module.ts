@@ -16,9 +16,9 @@ import { PlgnJournalModule } from 'plgn-journal';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [
-    { path: '', component: GeneraterefundsComponent, pathMatch: 'full' }
-];
+// const routes: Routes = [
+//     { path: '', component: GeneraterefundsComponent, pathMatch: 'full' }
+// ];
 
 
 @NgModule({
@@ -35,26 +35,26 @@ const routes: Routes = [
     //  JournalDirectiveWrapper,
   ],
 
-    imports: [
-        RouterModule.forChild(routes),
-        CommonModule,
-    FormsModule,
-    KendoUiAngularModule,
-    CoreFoundationModule,
-        PlgnJournalModule
-  ],
+  //   imports: [
+  //      // RouterModule.forChild(routes),
+  //       CommonModule,
+  //   FormsModule,
+  //   KendoUiAngularModule,
+  //   CoreFoundationModule,
+  //       PlgnJournalModule
+  // ],
   exports: [
     //RefundsmanagementComponent,
-
-    //CustomerRefundDetailsComponent,
+    GeneraterefundsComponent,
+    CustomerRefundDetailsComponent,
     //HeldrefundsComponent,
     //JournalComponent,
     //PotentialrefundsComponent,
     //RefundchecksreportComponent,
     //ReportrefundsComponent,
     //ReportRefundDetailsComponent,
-    KendoUiAngularModule,
-    PlgnJournalModule
+   // KendoUiAngularModule,
+   // PlgnJournalModule
   ]
 })
 export class GenerateRefundsModule {

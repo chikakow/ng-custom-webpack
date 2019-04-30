@@ -13,12 +13,12 @@ import { FormsModule } from '@angular/forms';
 import { CoreFoundationModule, KendoUiAngularModule } from 'core-foundation';
 import { PlgnJournalModule } from 'plgn-journal';
 
-import { Routes, RouterModule } from '@angular/router';
+//import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [
-    { path: '', component: HeldrefundsComponent, pathMatch: 'full' }
-];
+// const routes: Routes = [
+//     { path: '', component: HeldrefundsComponent, pathMatch: 'full' }
+// ];
 
 
 @NgModule({
@@ -26,7 +26,7 @@ const routes: Routes = [
     //RefundsmanagementComponent,
     //GeneraterefundsComponent,
     //CustomerRefundDetailsComponent,
-    HeldrefundsComponent,
+   HeldrefundsComponent
     //JournalComponent,
     //PotentialrefundsComponent,
     //RefundchecksreportComponent,
@@ -36,7 +36,7 @@ const routes: Routes = [
   ],
 
     imports: [
-        RouterModule.forChild(routes),
+        // RouterModule.forChild(routes),
         CommonModule,
     FormsModule,
     KendoUiAngularModule,
@@ -47,14 +47,14 @@ const routes: Routes = [
     //RefundsmanagementComponent,
     
     //CustomerRefundDetailsComponent,
-    //HeldrefundsComponent,
+    HeldrefundsComponent,
     //JournalComponent,
     //PotentialrefundsComponent,
     //RefundchecksreportComponent,
     //ReportrefundsComponent,
     //ReportRefundDetailsComponent,
-    KendoUiAngularModule,
-    PlgnJournalModule
+    // KendoUiAngularModule,
+    // PlgnJournalModule
   ]
 })
 export class HeldFundsRefundsModule {
